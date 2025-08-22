@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Lukš - UX Designer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #0f0f0f;
+            background: linear-gradient(135deg, #FB7E14 0%, #FF9A47 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, #ff6b6b33 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #4ecdc433 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, #45b7d133 0%, transparent 50%),
+                radial-gradient(circle at 25% 75%, #96ceb433 0%, transparent 50%);
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: slideUp 1s ease-out;
+            letter-spacing: -2px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 10px;
+            font-weight: 500;
+            animation: slideUp 1s ease-out 0.2s both;
+        }
+
+        .location {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            font-weight: 300;
+            animation: slideUp 1s ease-out 0.4s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        main {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px;
+            margin: 50px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FB7E14, #FF9A47);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #2d3748;
+            font-weight: 400;
+        }
+
+        .career-timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 25px 35px;
+            margin: 20px 0;
+            border-radius: 20px;
+            transform: translateX(-20px);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(238, 90, 111, 0.3);
+            cursor: pointer;
+        }
+
+        .timeline-item:nth-child(even) {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            transform: translateX(20px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3);
+        }
+
+        .timeline-item:nth-child(3n) {
+            background: linear-gradient(135deg, #45b7d1, #96c93d);
+            box-shadow: 0 10px 25px rgba(69, 183, 209, 0.3);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(0) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .strength-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strength-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96c93d);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .strength-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .strength-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .strength-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .strength-card p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .value-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(102, 126, 234, 0.15);
+            transform: translateX(10px);
+        }
+
+        .interests {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .interests h2 {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+
+        .interests p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 80px 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+            animation: rotate 10s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section h2 {
+            color: white;
+            -webkit-text-fill-color: white;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-link:hover::before {
+            left: 100%;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 40px 30px;
+                margin: 20px 0;
+            }
+            
+            .strengths-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline-item {
+                transform: translateX(0);
+            }
+            
+            .timeline-item:nth-child(even) {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <div class="container">
+        <header>
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="https://romanluks.eu/wp-content/uploads/2025/02/rleu.webp" alt="Roman Lukš" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; object-fit: cover; border: 4px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+                <h1>Roman Lukš</h1>
+                <div class="subtitle">UX Designer</div>
+                <div class="location">Brno, Czech Republic</div>
+            </div>
+            <div class="scroll-indicator">↓</div>
+        </header>
+
+        <main>
+            <section>
+                <h2>About</h2>
+                <p class="intro-text">Hello, and nice to meet you! I'm <strong>Roman</strong>, born and raised in <strong>Brno, Czech Republic</strong>.</p>
+                <p class="intro-text">I became a UX Designer because I like to figure things out, solve problems, design and improve people's experiences.</p>
+                <p class="intro-text">My unique set of skills comes from my diverse career path: I started as a <strong>software developer</strong>, then became a <strong>product marketing manager</strong>, then a <strong>project manager & scrum master</strong>, and now I'm a <strong>UX Designer</strong>.</p>
+            </section>
+
+            <section>
+                <h2>Spark</h2>
+                <p class="intro-text">What makes me sparkle as a UX Designer?</p>
+                <div class="career-timeline">
+                    <div class="timeline-item">
+                        <h3>🎯 Passion for designing experiences</h3>
+                        <p>I like to figure things out, solve problems, and improve people's experiences</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>💻 Technical understanding</h3>
+                        <p>I understand how software development works</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>🤝 Agile & team facilitation skills</h3>
+                        <p>Experience in project management and scrum mastery</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>🔍 Basic UX research skills</h3>
+                        <p>Understanding user needs and behaviors</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>📊 Marketing background</h3>
+                        <p>Business understanding and user-focused thinking</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>💬 Communication and storytelling</h3>
+                        <p>Ability to present ideas and facilitate discussions</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Work style</h2>
+                <p class="intro-text">I prefer to work in <strong>small autonomous teams</strong> rather than large corporations. I think I'm <strong>methodical and organized</strong>. I like to solve problems and have fun while doing it.</p>
+            </section>
+
+            <section>
+                <h2>Interests</h2>
+                <p class="intro-text">Apart from work, I try to spend time with <strong>family and friends</strong>, go for <strong>nature walks</strong>, play <strong>cooperative games and VR games</strong>, read <strong>design and sci-fi books</strong>, and learn new things.</p>
+            </section>
+
+            <section>
+                <h2>Strengths</h2>
+                <div class="strengths-grid">
+                    <div class="strength-card">
+                        <div class="strength-icon">🚀</div>
+                        <h3>Drive to improve and optimize</h3>
+                        <p>Always looking for ways to make things better</p>
+                    </div>
+                    <div class="strength-card">
+                        <div class="strength-icon">💡</div>
+                        <h3>Thinking outside the box</h3>
+                        <p>Creative problem-solving approach</p>
+                    </div>
+                    <div class="strength-card">
+                        <div class="strength-icon">❤️</div>
+                        <h3>Empathetic</h3>
+                        <p>Understanding user and team member perspectives</p>
+                    </div>
+                    <div class="strength-card">
+                        <div class="strength-icon">🔧</div>
+                        <h3>Methodical</h3>
+                        <p>Systematic approach to problem-solving</p>
+                    </div>
+                    <div class="strength-card">
+                        <div class="strength-icon">🎯</div>
+                        <h3>Calm and understanding</h3>
+                        <p>Level-headed in challenging situations</p>
+                    </div>
+                    <div class="strength-card">
+                        <div class="strength-icon">🧠</div>
+                        <h3>Curious</h3>
+                        <p>Always eager to learn new things and skills</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Weaknesses</h2>
+                <div class="values-list">
+                    <div class="value-item">
+                        <strong>Poor memory</strong><br>
+                        I tend to forget things easily
+                    </div>
+                    <div class="value-item">
+                        <strong>Tendency to overthink</strong><br>
+                        Sometimes I analyze things too much
+                    </div>
+                    <div class="value-item">
+                        <strong>Difficulty with multitasking</strong><br>
+                        I prefer focusing on one thing at a time
+                    </div>
+                    <div class="value-item">
+                        <strong>Challenges with on-the-spot thinking</strong><br>
+                        I work better when I have time to think
+                    </div>
+                    <div class="value-item">
+                        <strong>Informal communication style</strong><br>
+                        I tend to be casual in my communication
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="contact-section">
+            <div class="contact-content">
+                <h2>Contact</h2>
+                <p>Feel free to reach out if you want to chat, collaborate, or just say hello!</p>
+                <div class="contact-links">
+                    <a href="mailto:rluks@protonmail.com" class="contact-link">✉️ rluks 🐌 protonmail 🌞 com</a>
+                    <a href="https://www.linkedin.com/in/romanluks" class="contact-link">💼 LinkedIn</a>
+                    <a href="https://mastodonczech.cz/@rluks" class="contact-link">🐘 Mastodon</a>
+                    <a href="https://matrix.to/#/@rluks:matrix.org" class="contact-link">💬 Matrix</a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">(no <a href="https://unsolicitedduckpic.com/" style="color: #FB7E14;">duck pics</a> please)</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
