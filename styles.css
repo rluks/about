@@ -274,8 +274,8 @@ h2::after {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding: 32px 24px;
+    align-items: flex-start;
+    padding: 24px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: left;
 }
@@ -294,7 +294,7 @@ h2::after {
 .flip-card-front h3, .flip-card-back h3 {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
 .flip-card-front h3 {
@@ -318,8 +318,17 @@ h2::after {
 }
 
 .flip-card ul {
-    margin: 8px 0 0 20px;
+    margin: 16px 0 0 16px;
     padding: 0;
+}
+
+.flip-card-back p + ul {
+    margin-top: 4px;
+}
+
+.flip-card-back p:last-of-type {
+    margin-top: 16px;
+    margin-bottom: 4px;
 }
 
 .flip-card li {
@@ -332,7 +341,8 @@ h2::after {
 
 .flip-icon {
     font-size: 32px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    align-self: flex-start;
 }
 
 .strength-card {
