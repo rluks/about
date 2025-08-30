@@ -202,69 +202,22 @@
             font-size: 14px;
         }
 
-        .contact-section {
-            background: #2D3748;
-            color: white;
-            padding: 48px;
-            border-radius: 16px;
-            text-align: center;
-            margin-top: 64px;
-        }
-
-        .contact-section h2 {
-            color: white;
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
-
-        .contact-section h2::after {
-            background: white;
-        }
-
-        .contact-section p {
-            font-size: 18px;
-            margin-bottom: 32px;
-            opacity: 0.9;
-        }
-
         .contact-links {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             gap: 16px;
-            flex-wrap: wrap;
         }
 
         .contact-link {
-            color: white;
+            color: #FB7E14;
             text-decoration: none;
-            padding: 12px 24px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.1);
-            transition: all 0.2s ease;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 18px;
+            transition: color 0.2s ease;
         }
 
         .contact-link:hover {
-            background: rgba(255,255,255,0.2);
-            border-color: white;
-            transform: translateY(-1px);
-        }
-
-        .duck-note {
-            margin-top: 24px;
-            font-size: 14px;
-            opacity: 0.7;
-        }
-
-        .duck-note a {
-            color: #FB7E14;
-            text-decoration: none;
-        }
-
-        .duck-note a:hover {
-            text-decoration: underline;
+            color: #E56B0C;
         }
 
         @media (max-width: 768px) {
@@ -289,20 +242,6 @@
                 font-size: 28px;
             }
             
-            .contact-section {
-                padding: 32px 24px;
-            }
-            
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-link {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -506,16 +445,12 @@
             </div>
         </section>
 
-        <div class="contact-section">
-            <h2>Contact ✉</h2>
+        <section>
+            <h2>Contact</h2>
             <div class="contact-links">
-                <a href="mailto:rluks@protonmail.com" class="contact-link">✉️ rluks 🐌 protonmail 🌞 com</a>
-                <a href="https://www.linkedin.com/in/romanluks" class="contact-link">💼 LinkedIn</a>
-                <a href="https://mastodonczech.cz/@rluks" class="contact-link">🐘 Mastodon</a>
-                <a href="https://matrix.to/#/@rluks:matrix.org" class="contact-link">💬 Matrix</a>
+                <a href="mailto:rluks@protonmail.com" class="contact-link">rluks@protonmail.com</a>
             </div>
-            <div class="duck-note">(no <a href="https://unsolicitedduckpic.com/">duck pics</a> please)</div>
-        </div>
+        </section>
     </div>
 </body>
 </html>
