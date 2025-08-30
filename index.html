@@ -129,11 +129,11 @@
 
         .spark-item {
             background: white;
-            padding: 24px;
             border-radius: 12px;
             border-left: 4px solid #FB7E14;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
         }
 
         .spark-item:hover {
@@ -141,14 +141,44 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
 
-        .spark-item h3 {
+        .spark-item summary {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+            list-style: none;
+        }
+
+        .spark-item summary:hover {
+            background: rgba(251, 126, 20, 0.05);
+        }
+
+        .spark-item summary h3 {
             font-size: 18px;
             font-weight: 600;
             color: #2D3748;
-            margin-bottom: 8px;
+            margin: 0;
         }
 
-        .spark-item p {
+        .spark-item summary::after {
+            content: '▼';
+            font-size: 16px;
+            color: #FB7E14;
+            transition: transform 0.3s ease;
+        }
+
+        .spark-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .spark-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .spark-content {
+            padding: 0 24px 24px 24px;
             color: #718096;
             line-height: 1.6;
         }
@@ -292,30 +322,54 @@
                 <strong>uniquely positions</strong> me as a <strong>UX Designer</strong>.
             </div>
             <div class="spark-grid">
-                <div class="spark-item">
-                    <h3>🎮 Passion for designing experiences</h3>
-                    <p>Interest in making games uncovered my underlying passion for designing experiences. I love nicely polished games with excellent game feel and am curious about applying it in 'serious' applications.</p>
-                </div>
-                <div class="spark-item">
-                    <h3>💻 Can communicate with developers</h3>
-                    <p>My experience in developing software allows me to automate tasks and provides insights into software development practices. It helps me communicate with developers. Yes, I can read and write code (and bugs, mostly bugs) 🤓.</p>
-                </div>
-                <div class="spark-item">
-                    <h3>🤝 Agile & team facilitation</h3>
-                    <p>By serving as a Scrum Master, I gained a deep understanding of agile principles, acquired experience in facilitating workshops and meetings, and developed an awareness of team organization.</p>
-                </div>
-                <div class="spark-item">
-                    <h3>🔍 Research and data analysis</h3>
-                    <p>Working on my diploma thesis really opened my eyes to the world of research and data analysis. I gained basic UX research skills through UXWell course.</p>
-                </div>
-                <div class="spark-item">
-                    <h3>📊 Marketing background</h3>
-                    <p>I studied marketing and applied the lessons to promote a small indie game. It involved developing marketing strategy, blogging, networking, user testing, prioritizing feedback and more.</p>
-                </div>
-                <div class="spark-item">
-                    <h3>💬 Blogging and storytelling</h3>
-                    <p>Blogging forces me to formulate my thoughts clearly and concisely. I routinely rewrite my sentences. ChatGPT is a great help. I want to improve my storytelling skills.</p>
-                </div>
+                <details class="spark-item">
+                    <summary>
+                        <h3>🎮 Passion for designing experiences</h3>
+                    </summary>
+                    <div class="spark-content">
+                        <p>Interest in making games uncovered my underlying passion for designing experiences. I love nicely polished games with excellent game feel and am curious about applying it in 'serious' applications.</p>
+                    </div>
+                </details>
+                <details class="spark-item">
+                    <summary>
+                        <h3>💻 Can communicate with developers</h3>
+                    </summary>
+                    <div class="spark-content">
+                        <p>My experience in developing software allows me to automate tasks and provides insights into software development practices. It helps me communicate with developers. Yes, I can read and write code (and bugs, mostly bugs) 🤓.</p>
+                    </div>
+                </details>
+                <details class="spark-item">
+                    <summary>
+                        <h3>🤝 Agile & team facilitation</h3>
+                    </summary>
+                    <div class="spark-content">
+                        <p>By serving as a Scrum Master, I gained a deep understanding of agile principles, acquired experience in facilitating workshops and meetings, and developed an awareness of team organization.</p>
+                    </div>
+                </details>
+                <details class="spark-item">
+                    <summary>
+                        <h3>🔍 Research and data analysis</h3>
+                    </summary>
+                    <div class="spark-content">
+                        <p>Working on my diploma thesis really opened my eyes to the world of research and data analysis. I gained basic UX research skills through UXWell course.</p>
+                    </div>
+                </details>
+                <details class="spark-item">
+                    <summary>
+                        <h3>📊 Marketing background</h3>
+                    </summary>
+                    <div class="spark-content">
+                        <p>I studied marketing and applied the lessons to promote a small indie game. It involved developing marketing strategy, blogging, networking, user testing, prioritizing feedback and more.</p>
+                    </div>
+                </details>
+                <details class="spark-item">
+                    <summary>
+                        <h3>💬 Blogging and storytelling</h3>
+                    </summary>
+                    <div class="spark-content">
+                        <p>Blogging forces me to formulate my thoughts clearly and concisely. I routinely rewrite my sentences. ChatGPT is a great help. I want to improve my storytelling skills.</p>
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -467,5 +521,6 @@
             </div>
         </section>
     </div>
+    
 </body>
 </html>
