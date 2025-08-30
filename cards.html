@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Cards Prototype</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FAFAFA;
+            padding: 40px;
+            color: #2D3748;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FB7E14;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            display: block;
+        }
+
+        .flip-card input[type="checkbox"] {
+            display: none;
+        }
+
+        .flip-card input[type="checkbox"]:checked + .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .flip-card-front {
+            background: white;
+            border-left: 4px solid #FB7E14;
+        }
+
+        .flip-card-inner {
+            cursor: pointer;
+        }
+
+
+        .flip-card-back {
+            background: #FB7E14;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2D3748;
+            margin-bottom: 8px;
+        }
+
+        .flip-card-front p {
+            font-size: 14px;
+            color: #718096;
+            line-height: 1.4;
+        }
+
+        .flip-card-back h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .flip-card-back p {
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Strengths & Growth Areas</h1>
+        
+        <div class="cards-grid">
+            <div class="flip-card">
+                <input type="checkbox" id="card1">
+                <label for="card1" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="icon">🚀</div>
+                        <h3>Drive to improve</h3>
+                        <p>Rarely satisfied with status quo. Always pushing the envelope and embracing change.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="icon">🤔</div>
+                        <h3>Tend to overthink</h3>
+                        <p>Sometimes get caught up thinking too much instead of taking action. Working on starting with smallest tasks.</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="flip-card">
+                <input type="checkbox" id="card2">
+                <label for="card2" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="icon">💡</div>
+                        <h3>Creative problem solving</h3>
+                        <p>Full of ideas. Love solving problems with both realistic and unorthodox solutions.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="icon">💭</div>
+                        <h3>Poor at thinking on the spot</h3>
+                        <p>Rarely come up with witty responses right there. Working on improving public speaking skills.</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="flip-card">
+                <input type="checkbox" id="card3">
+                <label for="card3" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="icon">❤️</div>
+                        <h3>Empathetic</h3>
+                        <p>Never let ego stand in the way. Understanding of others' feelings and a team player.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="icon">🗣️</div>
+                        <h3>Tend to interrupt</h3>
+                        <p>This got way better last few years. Practicing willpower, empathy, and active listening.</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="flip-card">
+                <input type="checkbox" id="card4">
+                <label for="card4" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="icon">🧘</div>
+                        <h3>Calm & understanding</h3>
+                        <p>Know it's not all rainbows – things break, people forget, we all make mistakes.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="icon">😤</div>
+                        <h3>Lack authority</h3>
+                        <p>Often too informal and easygoing to command respect. Servant leadership is a thing, isn't it?</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="flip-card">
+                <input type="checkbox" id="card5">
+                <label for="card5" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="icon">🎯</div>
+                        <h3>Focused & methodical</h3>
+                        <p>Minimalistic, organized. Research, spreadsheets, visualization, prototyping.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="icon">🧠</div>
+                        <h3>Poor memory</h3>
+                        <p>Writing everything down. Remember all unnecessary things with clarity. D'oh!</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="flip-card">
+                <input type="checkbox" id="card6">
+                <label for="card6" class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="icon">🌟</div>
+                        <h3>Curious explorer</h3>
+                        <p>Broad skill set across design, development, agile, marketing, and more.</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="icon">😴</div>
+                        <h3>Laziness</h3>
+                        <p>Looking for ways to automate work. Ask me about "my python 3 poster" or "inbox tools".</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 32px; color: #718096; font-style: italic;">
+            Click cards to see the full picture
+        </p>
+    </div>
+</body>
+</html>
