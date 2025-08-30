@@ -206,20 +206,25 @@
             content: '▼';
             font-size: 16px;
             color: #FB7E14;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.3s ease-out;
         }
 
         .spark-content {
             color: #718096;
             line-height: 1.6;
-            overflow: hidden;
-            max-height: 0;
+            display: grid;
+            grid-template-rows: 0fr;
             padding: 0 24px;
-            transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: grid-template-rows 0.25s ease-out, padding 0.25s ease-out;
+            overflow: hidden;
+        }
+
+        .spark-content > div {
+            min-height: 0;
         }
 
         .spark-item input[type="checkbox"]:checked ~ .spark-content {
-            max-height: 200px;
+            grid-template-rows: 1fr;
             padding: 0 24px 24px 24px;
         }
 
@@ -369,7 +374,9 @@
                         <h3>🎮 Passion for designing experiences</h3>
                     </label>
                     <div class="spark-content">
-                        <p>Interest in making games uncovered my underlying passion for designing experiences. I love nicely polished games with excellent game feel and am curious about applying it in 'serious' applications.</p>
+                        <div>
+                            <p>Interest in making games uncovered my underlying passion for designing experiences. I love nicely polished games with excellent game feel and am curious about applying it in 'serious' applications.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="spark-item">
@@ -378,7 +385,9 @@
                         <h3>💻 Can communicate with developers</h3>
                     </label>
                     <div class="spark-content">
-                        <p>My experience in developing software allows me to automate tasks and provides insights into software development practices. It helps me communicate with developers. Yes, I can read and write code (and bugs, mostly bugs) 🤓.</p>
+                        <div>
+                            <p>My experience in developing software allows me to automate tasks and provides insights into software development practices. It helps me communicate with developers. Yes, I can read and write code (and bugs, mostly bugs) 🤓.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="spark-item">
@@ -387,7 +396,9 @@
                         <h3>🤝 Agile & team facilitation</h3>
                     </label>
                     <div class="spark-content">
-                        <p>By serving as a Scrum Master, I gained a deep understanding of agile principles, acquired experience in facilitating workshops and meetings, and developed an awareness of team organization.</p>
+                        <div>
+                            <p>By serving as a Scrum Master, I gained a deep understanding of agile principles, acquired experience in facilitating workshops and meetings, and developed an awareness of team organization.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="spark-item">
@@ -396,7 +407,9 @@
                         <h3>🔍 Research and data analysis</h3>
                     </label>
                     <div class="spark-content">
-                        <p>Working on my diploma thesis really opened my eyes to the world of research and data analysis. I gained basic UX research skills through UXWell course.</p>
+                        <div>
+                            <p>Working on my diploma thesis really opened my eyes to the world of research and data analysis. I gained basic UX research skills through UXWell course.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="spark-item">
@@ -405,7 +418,9 @@
                         <h3>📊 Marketing background</h3>
                     </label>
                     <div class="spark-content">
-                        <p>I studied marketing and applied the lessons to promote a small indie game. It involved developing marketing strategy, blogging, networking, user testing, prioritizing feedback and more.</p>
+                        <div>
+                            <p>I studied marketing and applied the lessons to promote a small indie game. It involved developing marketing strategy, blogging, networking, user testing, prioritizing feedback and more.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="spark-item">
@@ -414,7 +429,9 @@
                         <h3>💬 Blogging and storytelling</h3>
                     </label>
                     <div class="spark-content">
-                        <p>Blogging forces me to formulate my thoughts clearly and concisely. I routinely rewrite my sentences. ChatGPT is a great help. I want to improve my storytelling skills.</p>
+                        <div>
+                            <p>Blogging forces me to formulate my thoughts clearly and concisely. I routinely rewrite my sentences. ChatGPT is a great help. I want to improve my storytelling skills.</p>
+                        </div>
                     </div>
                 </div>
             </div>
