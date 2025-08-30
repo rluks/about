@@ -130,15 +130,12 @@
         .spark-item {
             background: white;
             border-radius: 12px;
-            border-left: 4px solid #FB7E14;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease;
             overflow: hidden;
         }
 
         .spark-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
 
         .spark-item summary {
@@ -198,8 +195,15 @@
             color: #2D3748;
             margin: 0;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            gap: 16px;
+        }
+
+        .spark-header h3::before {
+            content: attr(data-icon);
+            font-size: 26px;
+            flex-shrink: 0;
         }
 
         .spark-header h3::after {
@@ -207,6 +211,7 @@
             font-size: 16px;
             color: #FB7E14;
             transition: transform 0.3s ease-out;
+            margin-left: auto;
         }
 
         .spark-content {
@@ -371,7 +376,7 @@
                 <div class="spark-item">
                     <input type="checkbox" id="spark1">
                     <label for="spark1" class="spark-header">
-                        <h3>🎮 Passion for designing experiences</h3>
+                        <h3 data-icon="🎮">Passion for designing experiences</h3>
                     </label>
                     <div class="spark-content">
                         <div>
@@ -382,7 +387,7 @@
                 <div class="spark-item">
                     <input type="checkbox" id="spark2">
                     <label for="spark2" class="spark-header">
-                        <h3>💻 Can communicate with developers</h3>
+                        <h3 data-icon="💻">Can communicate with developers</h3>
                     </label>
                     <div class="spark-content">
                         <div>
@@ -393,7 +398,7 @@
                 <div class="spark-item">
                     <input type="checkbox" id="spark3">
                     <label for="spark3" class="spark-header">
-                        <h3>🤝 Agile & team facilitation</h3>
+                        <h3 data-icon="🤝">Agile & team facilitation</h3>
                     </label>
                     <div class="spark-content">
                         <div>
@@ -404,7 +409,7 @@
                 <div class="spark-item">
                     <input type="checkbox" id="spark4">
                     <label for="spark4" class="spark-header">
-                        <h3>🔍 Research and data analysis</h3>
+                        <h3 data-icon="🔍">Research and data analysis</h3>
                     </label>
                     <div class="spark-content">
                         <div>
@@ -415,7 +420,7 @@
                 <div class="spark-item">
                     <input type="checkbox" id="spark5">
                     <label for="spark5" class="spark-header">
-                        <h3>📊 Marketing background</h3>
+                        <h3 data-icon="📊">Marketing background</h3>
                     </label>
                     <div class="spark-content">
                         <div>
@@ -426,7 +431,7 @@
                 <div class="spark-item">
                     <input type="checkbox" id="spark6">
                     <label for="spark6" class="spark-header">
-                        <h3>💬 Blogging and storytelling</h3>
+                        <h3 data-icon="💬">Blogging and storytelling</h3>
                     </label>
                     <div class="spark-content">
                         <div>
