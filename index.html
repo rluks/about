@@ -239,15 +239,16 @@
 
         .flip-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
             margin-top: 32px;
         }
 
         .flip-card {
             background-color: transparent;
             width: 100%;
-            height: 200px;
+            height: auto;
+            min-height: 400px;
             perspective: 1000px;
         }
 
@@ -274,14 +275,16 @@
             position: absolute;
             width: 100%;
             height: 100%;
+            min-height: 400px;
             backface-visibility: hidden;
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            padding: 24px;
+            padding: 32px 24px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: left;
         }
 
         .flip-card-front {
@@ -305,16 +308,33 @@
             color: #2D3748;
         }
 
-        .flip-card-front p {
-            font-size: 14px;
+        .flip-card-front p, .flip-card-front ul {
+            font-size: 15px;
             color: #718096;
-            line-height: 1.4;
+            line-height: 1.5;
+            text-align: left;
+            width: 100%;
         }
 
-        .flip-card-back p {
-            font-size: 14px;
-            line-height: 1.4;
-            opacity: 0.9;
+        .flip-card-back p, .flip-card-back ul {
+            font-size: 15px;
+            line-height: 1.5;
+            opacity: 0.95;
+            text-align: left;
+            width: 100%;
+        }
+
+        .flip-card ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .flip-card li {
+            margin-bottom: 4px;
+        }
+
+        .flip-card-back ul {
+            color: white;
         }
 
         .flip-icon {
@@ -574,12 +594,24 @@
                         <div class="flip-card-front">
                             <div class="flip-icon">🚀</div>
                             <h3>Drive to Improve</h3>
-                            <p>I'm rarely satisfied with status quo and have an inner need to keep pushing the envelope. I embrace change and like to see progress. Always looking for ways to make things better!</p>
+                            <p>I'm rarely satisfied with status quo and have an inner need to keep pushing the envelope:</p>
+                            <ul>
+                                <li>I embrace change and like to see progress</li>
+                                <li>Always looking for ways to make things better</li>
+                                <li>Constantly seeking optimization opportunities</li>
+                                <li>Motivated by continuous improvement</li>
+                            </ul>
                         </div>
                         <div class="flip-card-back">
                             <div class="flip-icon">🤔</div>
                             <h3>Overthinking</h3>
-                            <p>Sometimes I get caught up thinking too much instead of taking action. How I cope: I work on this by starting with the smallest first task and breaking things down into manageable steps.</p>
+                            <p>Sometimes I get caught up thinking too much instead of taking action.</p>
+                            <p><strong>How I cope:</strong></p>
+                            <ul>
+                                <li>Starting with the smallest first task</li>
+                                <li>Breaking things down into manageable steps</li>
+                                <li>Setting time limits for decision-making</li>
+                            </ul>
                         </div>
                     </label>
                 </div>
@@ -590,12 +622,24 @@
                         <div class="flip-card-front">
                             <div class="flip-icon">💡</div>
                             <h3>Creative Problem Solving</h3>
-                            <p>I'm full of radical ideas and love solving problems with both realistic and unorthodox solutions. Ask me about the "tallest building exercise" - it's a great example of thinking outside the box!</p>
+                            <p>I'm full of radical ideas and love solving problems:</p>
+                            <ul>
+                                <li>Both realistic and unorthodox solutions</li>
+                                <li>Thinking outside the box approaches</li>
+                                <li>Ask me about the "tallest building exercise"</li>
+                                <li>Combining different perspectives creatively</li>
+                            </ul>
                         </div>
                         <div class="flip-card-back">
                             <div class="flip-icon">⚡</div>
                             <h3>Thinking on the Spot</h3>
-                            <p>I rarely come up with witty responses immediately. I'd be terrible at rap battles! How I cope: I'm working on improving my public speaking skills and preparing ahead when possible.</p>
+                            <p>I rarely come up with witty responses immediately. I'd be terrible at rap battles!</p>
+                            <p><strong>How I cope:</strong></p>
+                            <ul>
+                                <li>Improving my public speaking skills</li>
+                                <li>Preparing ahead when possible</li>
+                                <li>Taking time to think before responding</li>
+                            </ul>
                         </div>
                     </label>
                 </div>
@@ -606,12 +650,24 @@
                         <div class="flip-card-front">
                             <div class="flip-icon">❤️</div>
                             <h3>Empathetic</h3>
-                            <p>I never let my ego stand in the way. I'm understanding of others' feelings and strive to make things easy for everyone involved. Being a team player comes naturally to me.</p>
+                            <p>I never let my ego stand in the way:</p>
+                            <ul>
+                                <li>Understanding of others' feelings</li>
+                                <li>Strive to make things easy for everyone</li>
+                                <li>Being a team player comes naturally</li>
+                                <li>Putting team success before personal credit</li>
+                            </ul>
                         </div>
                         <div class="flip-card-back">
                             <div class="flip-icon">🗣️</div>
                             <h3>Interrupting Others</h3>
-                            <p>I tend to interrupt others, though this has improved greatly over the last few years. How I cope: I practice active listening, empathy, and willpower to keep getting better at this.</p>
+                            <p>I tend to interrupt others, though this has improved greatly over the last few years.</p>
+                            <p><strong>How I cope:</strong></p>
+                            <ul>
+                                <li>Practice active listening</li>
+                                <li>Focus on empathy and understanding</li>
+                                <li>Use willpower to keep getting better</li>
+                            </ul>
                         </div>
                     </label>
                 </div>
@@ -622,12 +678,24 @@
                         <div class="flip-card-front">
                             <div class="flip-icon">🧘</div>
                             <h3>Calm & Understanding</h3>
-                            <p>I know it's not all rainbows – things break, people forget, we all make mistakes. I stay patient and understanding, keeping a level head in challenging situations.</p>
+                            <p>I know it's not all rainbows – things break, people forget, we all make mistakes:</p>
+                            <ul>
+                                <li>Stay patient and understanding</li>
+                                <li>Keep a level head in challenging situations</li>
+                                <li>Accept that problems are part of the process</li>
+                                <li>Focus on solutions rather than blame</li>
+                            </ul>
                         </div>
                         <div class="flip-card-back">
                             <div class="flip-icon">👥</div>
                             <h3>Lack of Authority</h3>
-                            <p>I'm often too informal and easygoing to command respect. How I cope: Servant leadership is a thing, isn't it? I focus on supporting the team rather than commanding it.</p>
+                            <p>I'm often too informal and easygoing to command respect.</p>
+                            <p><strong>How I cope:</strong></p>
+                            <ul>
+                                <li>Servant leadership is a thing, isn't it?</li>
+                                <li>Focus on supporting the team</li>
+                                <li>Lead by example rather than command</li>
+                            </ul>
                         </div>
                     </label>
                 </div>
@@ -638,12 +706,24 @@
                         <div class="flip-card-front">
                             <div class="flip-icon">🎯</div>
                             <h3>Methodical & Focused</h3>
-                            <p>I'm minimalistic, organized, and systematic. I'm all about research, spreadsheets, visualization, and prototyping. Everything has its purpose and place!</p>
+                            <p>I'm minimalistic, organized, and systematic:</p>
+                            <ul>
+                                <li>Research and data-driven approach</li>
+                                <li>Spreadsheets and visualization tools</li>
+                                <li>Prototyping and testing methodologies</li>
+                                <li>Everything has its purpose and place</li>
+                            </ul>
                         </div>
                         <div class="flip-card-back">
                             <div class="flip-icon">🔀</div>
                             <h3>Poor at Multitasking</h3>
-                            <p>I'm poor at multitasking and prefer focusing on one problem at a time. How I cope: Context switching is bad anyway! I organize my work to minimize distractions.</p>
+                            <p>I'm poor at multitasking and prefer focusing on one problem at a time.</p>
+                            <p><strong>How I cope:</strong></p>
+                            <ul>
+                                <li>Context switching is bad anyway!</li>
+                                <li>Organize work to minimize distractions</li>
+                                <li>Time-blocking for focused work sessions</li>
+                            </ul>
                         </div>
                     </label>
                 </div>
@@ -654,12 +734,25 @@
                         <div class="flip-card-front">
                             <div class="flip-icon">🎓</div>
                             <h3>Curious Explorer</h3>
-                            <p>I explore diverse fields: design, development, agile, marketing, nature, finance, fencing, diving... Broad skill set across many areas, but master of none!</p>
+                            <p>I explore diverse fields:</p>
+                            <ul>
+                                <li>Design and development</li>
+                                <li>Agile and marketing</li>
+                                <li>Nature, finance, fencing, diving...</li>
+                                <li>Broad skill set across many areas</li>
+                                <li>Master of none, but eager to learn!</li>
+                            </ul>
                         </div>
                         <div class="flip-card-back">
                             <div class="flip-icon">🧠</div>
                             <h3>Poor Memory</h3>
-                            <p>I have poor memory for important things but remember all unnecessary details with clarity. D'oh! How I cope: I write everything down and use systems to stay organized.</p>
+                            <p>I have poor memory for important things but remember all unnecessary details with clarity. D'oh!</p>
+                            <p><strong>How I cope:</strong></p>
+                            <ul>
+                                <li>Write everything down</li>
+                                <li>Use systems to stay organized</li>
+                                <li>Rely on tools and documentation</li>
+                            </ul>
                         </div>
                     </label>
                 </div>
