@@ -8,6 +8,34 @@
     font-style: normal;
 }
 
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+    /* Primary Colors */
+    --color-primary: #FB7E14;
+    --color-primary-hover: #E56B0C;
+    --color-primary-light: rgba(251, 126, 20, 0.05);
+    --color-complementary: #1481FB;
+    
+    /* Text Colors */
+    --color-text-primary: #2D3748;
+    --color-text-secondary: #4A5568;
+    --color-text-muted: #718096;
+    --color-white: #ffffff;
+    
+    /* Background Colors */
+    --color-bg-primary: #FAFAFA;
+    --color-bg-white: #ffffff;
+    
+    /* Border Colors */
+    --color-border-light: #E2E8F0;
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.2);
+    --shadow-strong: rgba(0,0,0,0.7);
+    --text-shadow: 2px 2px 4px var(--shadow-strong), 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 /* ===== GLOBAL RESET & BASE STYLES ===== */
 * {
     margin: 0;
@@ -18,8 +46,8 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #2D3748;
-    background: #FAFAFA;
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
     font-size: 16px;
 }
 
@@ -34,7 +62,7 @@ h1 {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 48px;
     font-weight: 700;
-    color: white;
+    color: var(--color-white);
     margin-bottom: 8px;
     letter-spacing: -1px;
 }
@@ -43,7 +71,7 @@ h2 {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 32px;
     font-weight: 700;
-    color: #FB7E14;
+    color: var(--color-primary);
     margin-bottom: 24px;
     position: relative;
 }
@@ -55,14 +83,14 @@ h2::after {
     left: 0;
     width: 48px;
     height: 3px;
-    background: #FB7E14;
+    background: var(--color-primary);
     border-radius: 2px;
 }
 
 .intro-text {
     font-size: 18px;
     line-height: 1.7;
-    color: #4A5568;
+    color: var(--color-text-secondary);
     margin-bottom: 16px;
 }
 
@@ -87,19 +115,19 @@ header.hero {
 
 .hero-text {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
-    color: #FB7E14;
+    color: var(--color-primary);
     font-size: 24px;
     font-weight: 500;
     line-height: 1.5;
     text-align: left;
     max-width: 400px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: var(--text-shadow);
 }
 
 .hero-text span {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 28px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: var(--text-shadow);
 }
 
 .subtitle {
@@ -123,7 +151,7 @@ section:last-of-type {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 48px;
     font-weight: 700;
-    color: #FB7E14;
+    color: var(--color-primary);
     margin-bottom: 32px;
     text-align: center;
 }
@@ -140,7 +168,7 @@ section:last-of-type {
 }
 
 .spark-item {
-    background: white;
+    background: var(--color-bg-white);
     border-radius: 12px;
     transition: transform 0.2s ease;
     overflow: hidden;
@@ -162,14 +190,14 @@ section:last-of-type {
 }
 
 .spark-header:hover {
-    background: rgba(251, 126, 20, 0.05);
+    background: var(--color-primary-light);
 }
 
 .spark-header h3 {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #2D3748;
+    color: var(--color-text-primary);
     margin: 0;
     display: flex;
     justify-content: flex-start;
@@ -186,13 +214,13 @@ section:last-of-type {
 .spark-header h3::after {
     content: '▼';
     font-size: 16px;
-    color: #FB7E14;
+    color: var(--color-primary);
     transition: transform 0.3s ease-out;
     margin-left: auto;
 }
 
 .spark-content {
-    color: #718096;
+    color: var(--color-text-muted);
     line-height: 1.6;
     display: grid;
     grid-template-rows: 0fr;
