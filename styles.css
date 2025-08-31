@@ -180,11 +180,16 @@ h2::after {
 
 /* ===== LAYOUT SECTIONS ===== */
 section {
-    margin-bottom: 64px;
+    margin-bottom: 80px;
+}
+
+/* Smaller spacing for less important sections */
+section[aria-labelledby="contact-heading"] {
+    margin-bottom: 48px;
 }
 
 section:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: 80px;
 }
 
 /* ===== SPARK SECTION (ACCORDION) ===== */
@@ -227,7 +232,7 @@ section:last-of-type {
 }
 
 .spark-header {
-    padding: var(--space-md);
+    padding: 24px;
     display: block;
     cursor: pointer;
     transition: background-color var(--transition-fast);
@@ -268,7 +273,7 @@ section:last-of-type {
     line-height: 1.6;
     display: grid;
     grid-template-rows: 0fr;
-    padding: 0 24px;
+    padding: 0 40px;
     transition: grid-template-rows 0.25s ease-out, padding 0.25s ease-out;
     overflow: hidden;
 }
@@ -279,7 +284,7 @@ section:last-of-type {
 
 .spark-item input[type="checkbox"]:checked ~ .spark-content {
     grid-template-rows: 1fr;
-    padding: 0 24px 24px 24px;
+    padding: 0 40px 40px 40px;
 }
 
 .spark-item input[type="checkbox"]:checked ~ .spark-header h3::after {
@@ -327,8 +332,8 @@ section:last-of-type {
 .flip-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    margin-top: 32px;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .flip-card {
@@ -622,7 +627,7 @@ section:last-of-type {
     
     .flip-cards-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 24px;
     }
     
     .contact-links {
