@@ -124,6 +124,20 @@ header.hero {
     text-shadow: var(--text-shadow);
 }
 
+.hero-text-white {
+    color: var(--color-white);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpFadeIn 1.2s ease-out 0.5s forwards;
+}
+
+.hero-text-orange {
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpFadeIn 1.2s ease-out 1.2s forwards;
+}
+
 .hero-text span {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 28px;
@@ -470,6 +484,18 @@ section:last-of-type {
 
 .contact-link:hover {
     color: #E56B0C;
+}
+
+/* ===== HERO ANIMATIONS ===== */
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== SCROLL ANIMATIONS ===== */
