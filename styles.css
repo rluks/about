@@ -206,12 +206,15 @@ section:last-of-type {
 .spark-item {
     background: var(--color-bg-white);
     border-radius: var(--radius-lg);
-    transition: transform var(--transition-fast);
+    border: 1px solid transparent;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
     overflow: hidden;
 }
 
 .spark-item:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: var(--color-primary);
 }
 
 .spark-item input[type="checkbox"] {
@@ -508,12 +511,6 @@ section:last-of-type {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.interest-pill:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background: var(--color-primary-light);
-    border-color: var(--color-primary);
-}
 
 /* ===== CONTACT SECTION ===== */
 .contact-links {
