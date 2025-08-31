@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -20,21 +21,27 @@ body {
     padding: 24px;
 }
 
-header {
+header.hero-background {
+    position: relative;
     text-align: center;
-    padding: 80px 0 100px 0;
-    background: #FAFAFA;
+    padding: 120px 0 140px 0;
     margin: -24px -24px 64px -24px;
+    background-image: url('https://romanluks.eu/wp-content/uploads/2025/02/rleu.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.profile-image img {
-    width: 168px;
-    height: 168px;
-    border-radius: 50%;
-    margin-bottom: 24px;
-    object-fit: cover;
-    border: 4px solid #FB7E14;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+header.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 h1 {
@@ -53,7 +60,9 @@ h1 {
 }
 
 .hero-text {
-    color: #FB7E14;
+    position: relative;
+    z-index: 2;
+    color: white;
     font-size: 26px;
     font-weight: 500;
     line-height: 1.5;
@@ -61,6 +70,7 @@ h1 {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
 section {
@@ -430,15 +440,9 @@ h2::after {
         padding: 16px;
     }
     
-    header {
+    header.hero-background {
         margin: -16px -16px 48px -16px;
-        padding: 48px 0 64px 0;
-    }
-    
-    .profile-image img {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 20px;
+        padding: 80px 0 100px 0;
     }
     
     .hero-text {
@@ -459,4 +463,24 @@ h2::after {
         font-size: 28px;
     }
     
+}
+
+.problem-challenge {
+    position: relative;
+    text-decoration: line-through;
+    text-decoration-color: #FB7E14;
+    text-decoration-thickness: 2px;
+}
+
+.problem-challenge::before {
+    content: "challenges";
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Kalam', cursive;
+    font-size: 0.9em;
+    color: #FB7E14;
+    font-weight: 400;
+    white-space: nowrap;
 }
