@@ -217,14 +217,34 @@ section:last-of-type {
 
 /* Alternating section backgrounds for visual rhythm */
 .section-alt {
-    background: linear-gradient(135deg, rgba(251, 126, 20, 0.02) 0%, rgba(251, 126, 20, 0.01) 100%);
+    background: var(--color-complementary);
     margin-left: calc(-1 * var(--space-lg));
     margin-right: calc(-1 * var(--space-lg));
     padding-left: var(--space-lg);
     padding-right: var(--space-lg);
-    padding-top: var(--space-4xl);
-    padding-bottom: var(--space-4xl);
-    margin-bottom: var(--space-5xl);
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+}
+
+.section-alt h2 {
+    color: var(--color-white);
+}
+
+.section-alt .intro-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-alt a {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+.section-alt .interest-pill {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ===== SPARK SECTION (ACCORDION) ===== */
@@ -502,16 +522,10 @@ section:last-of-type {
     font-size: var(--font-size-lg);
 }
 
-.contact-link {
-    color: var(--color-primary);
-    text-decoration: none;
+.contact-email {
+    color: var(--color-white);
     font-weight: 500;
     font-size: var(--font-size-lg);
-    transition: color 0.2s ease;
-}
-
-.contact-link:hover {
-    color: var(--color-primary-hover);
 }
 
 /* ===== HERO ANIMATIONS ===== */
