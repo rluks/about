@@ -13,6 +13,25 @@
             background-image: radial-gradient(circle, rgba(229, 107, 12, 0.08) 2px, transparent 2px);
             background-size: 24px 24px;
         }
+        
+        /* Slide-in animations for spark section */
+        .slide-in {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-delay-1 { transition-delay: 0.1s; }
+        .slide-in-delay-2 { transition-delay: 0.2s; }
+        .slide-in-delay-3 { transition-delay: 0.3s; }
+        .slide-in-delay-4 { transition-delay: 0.4s; }
+        .slide-in-delay-5 { transition-delay: 0.5s; }
+        .slide-in-delay-6 { transition-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -29,7 +48,7 @@
             <h2 id="spark-heading">Spark ✨</h2>
             <p class="intro-text">I bring a <strong>unique mix</strong> of technical, creative, and <strong>collaborative skills</strong> to UX design.</p>
             <div class="spark-grid" role="list">
-                <div class="spark-item fade-in fade-in-delay-1" role="listitem">
+                <div class="spark-item slide-in slide-in-delay-1" role="listitem">
                     <input type="checkbox" id="spark1" aria-describedby="spark1-content">
                     <label for="spark1" class="spark-header">
                         <h3 data-icon="🎮">Passion for designing experiences</h3>
@@ -40,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="spark-item fade-in fade-in-delay-2">
+                <div class="spark-item slide-in slide-in-delay-2">
                     <input type="checkbox" id="spark2">
                     <label for="spark2" class="spark-header">
                         <h3 data-icon="💻">Can communicate with developers</h3>
@@ -51,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="spark-item fade-in fade-in-delay-3">
+                <div class="spark-item slide-in slide-in-delay-3">
                     <input type="checkbox" id="spark3">
                     <label for="spark3" class="spark-header">
                         <h3 data-icon="🤝">Agile & team facilitation</h3>
@@ -62,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="spark-item fade-in fade-in-delay-4">
+                <div class="spark-item slide-in slide-in-delay-4">
                     <input type="checkbox" id="spark4">
                     <label for="spark4" class="spark-header">
                         <h3 data-icon="🔍">Research and data analysis</h3>
@@ -73,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="spark-item fade-in fade-in-delay-5">
+                <div class="spark-item slide-in slide-in-delay-5">
                     <input type="checkbox" id="spark5">
                     <label for="spark5" class="spark-header">
                         <h3 data-icon="📊">Marketing background</h3>
@@ -84,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="spark-item fade-in fade-in-delay-6">
+                <div class="spark-item slide-in slide-in-delay-6">
                     <input type="checkbox" id="spark6">
                     <label for="spark6" class="spark-header">
                         <h3 data-icon="💬">Blogging and storytelling</h3>
@@ -307,12 +326,20 @@
             });
         }, observerOptions);
 
-        // Observe all elements with fade-in class
+        // Observe all elements with fade-in class (except spark items)
         document.addEventListener('DOMContentLoaded', () => {
             const fadeElements = document.querySelectorAll('.fade-in');
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
+            
+            // Trigger slide-in animations for spark items on page load
+            setTimeout(() => {
+                const slideElements = document.querySelectorAll('.slide-in');
+                slideElements.forEach(element => {
+                    element.classList.add('visible');
+                });
+            }, 100);
             
             // Observe flip cards for staggered animation
             const flipCards = document.querySelectorAll('.flip-card');
