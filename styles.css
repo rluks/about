@@ -1,5 +1,5 @@
 /* ===== IMPORTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://rsms.me/inter/inter.css');
 
 @font-face {
     font-family: 'CooperFiveOpti-Black';
@@ -31,7 +31,7 @@
     --space-xl: 4rem;    /* 64px */
     
     /* Typography */
-    --font-family-primary: 'Inter', sans-serif;
+    --font-family-primary: 'Inter Variable', 'Inter', sans-serif;
     --font-family-heading: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     --font-size-base: 1rem;      /* 16px */
     --font-size-lg: 1.125rem;    /* 18px */
