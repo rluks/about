@@ -282,7 +282,7 @@ section:last-of-type {
 /* ===== FLIP CARDS ===== */
 .flip-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     margin-top: 32px;
 }
@@ -538,5 +538,10 @@ section:last-of-type {
     
     h2 {
         font-size: 28px;
+    }
+    
+    .flip-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
