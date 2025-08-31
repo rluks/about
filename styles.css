@@ -1,5 +1,14 @@
+/* ===== IMPORTS ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+    font-family: 'CooperFiveOpti-Black';
+    src: url('CooperFiveOpti-Black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== GLOBAL RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -20,20 +29,7 @@ body {
     padding: 24px;
 }
 
-header.hero {
-    position: relative;
-    height: 500px;
-    margin: -24px -24px 64px -24px;
-    background-image: url('romanluks.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 60px;
-}
-
+/* ===== TYPOGRAPHY ===== */
 h1 {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 48px;
@@ -41,45 +37,6 @@ h1 {
     color: white;
     margin-bottom: 8px;
     letter-spacing: -1px;
-}
-
-.subtitle {
-    font-size: 24px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.hero-text {
-    font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
-    color: #2D3748;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: left;
-    max-width: 400px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-@font-face {
-    font-family: 'CooperFiveOpti-Black';
-    src: url('CooperFiveOpti-Black.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.hero-text span {
-    font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
-    font-size: 28px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-section {
-    margin-bottom: 64px;
-}
-
-section:last-of-type {
-    margin-bottom: 0;
 }
 
 h2 {
@@ -102,6 +59,66 @@ h2::after {
     border-radius: 2px;
 }
 
+.intro-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4A5568;
+    margin-bottom: 16px;
+}
+
+.intro-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== HERO SECTION ===== */
+header.hero {
+    position: relative;
+    height: 500px;
+    margin: -24px -24px 64px -24px;
+    background-image: url('romanluks.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+}
+
+.hero-text {
+    font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
+    color: #FB7E14;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+    max-width: 400px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-text span {
+    font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 24px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* ===== LAYOUT SECTIONS ===== */
+section {
+    margin-bottom: 64px;
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* ===== SPARK SECTION (ACCORDION) ===== */
 .spark-heading {
     font-family: 'CooperFiveOpti-Black', 'Cooper Black', serif;
     font-size: 48px;
@@ -113,17 +130,6 @@ h2::after {
 
 .spark-heading::after {
     display: none;
-}
-
-.intro-text {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #4A5568;
-    margin-bottom: 16px;
-}
-
-.intro-text:last-child {
-    margin-bottom: 0;
 }
 
 .spark-grid {
@@ -142,42 +148,6 @@ h2::after {
 
 .spark-item:hover {
     transform: translateY(-2px);
-}
-
-.spark-item summary {
-    padding: 24px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s ease;
-    list-style: none;
-}
-
-.spark-item summary:hover {
-    background: rgba(251, 126, 20, 0.05);
-}
-
-.spark-item summary h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2D3748;
-    margin: 0;
-}
-
-.spark-item summary::after {
-    content: '▼';
-    font-size: 16px;
-    color: #FB7E14;
-    transition: transform 0.3s ease;
-}
-
-.spark-item[open] summary::after {
-    transform: rotate(180deg);
-}
-
-.spark-item summary::-webkit-details-marker {
-    display: none;
 }
 
 .spark-item input[type="checkbox"] {
@@ -244,6 +214,44 @@ h2::after {
     transform: rotate(180deg);
 }
 
+/* Legacy accordion styles - potentially unused */
+.spark-item summary {
+    padding: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    list-style: none;
+}
+
+.spark-item summary:hover {
+    background: rgba(251, 126, 20, 0.05);
+}
+
+.spark-item summary h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2D3748;
+    margin: 0;
+}
+
+.spark-item summary::after {
+    content: '▼';
+    font-size: 16px;
+    color: #FB7E14;
+    transition: transform 0.3s ease;
+}
+
+.spark-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.spark-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ===== FLIP CARDS ===== */
 .flip-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -278,7 +286,8 @@ h2::after {
     display: block;
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front, 
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -306,7 +315,8 @@ h2::after {
     transform: rotateY(180deg);
 }
 
-.flip-card-front h3, .flip-card-back h3 {
+.flip-card-front h3, 
+.flip-card-back h3 {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -317,18 +327,13 @@ h2::after {
     color: #2D3748;
 }
 
-.flip-card-front p, .flip-card-front ul {
+.flip-card-front p, 
+.flip-card-front ul,
+.flip-card-back p, 
+.flip-card-back ul {
     font-size: 15px;
     color: #718096;
     line-height: 1.5;
-    text-align: left;
-    width: 100%;
-}
-
-.flip-card-back p, .flip-card-back ul {
-    font-size: 15px;
-    line-height: 1.5;
-    color: #718096;
     text-align: left;
     width: 100%;
 }
@@ -351,10 +356,6 @@ h2::after {
     margin-bottom: 4px;
 }
 
-.flip-card-back ul {
-    color: #718096;
-}
-
 .card-indicator {
     position: absolute;
     top: 16px;
@@ -362,7 +363,7 @@ h2::after {
     font-size: 24px;
 }
 
-
+/* ===== STRENGTH CARDS (LEGACY - POTENTIALLY UNUSED) ===== */
 .strength-card {
     background: white;
     padding: 24px;
@@ -397,6 +398,7 @@ h2::after {
     line-height: 1.5;
 }
 
+/* ===== WEAKNESS ITEMS (LEGACY - POTENTIALLY UNUSED) ===== */
 .weaknesses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -421,6 +423,7 @@ h2::after {
     font-size: 14px;
 }
 
+/* ===== CONTACT SECTION ===== */
 .contact-links {
     display: flex;
     flex-direction: row;
@@ -441,6 +444,7 @@ h2::after {
     color: #E56B0C;
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .container {
         padding: 16px;
@@ -471,6 +475,4 @@ h2::after {
     h2 {
         font-size: 28px;
     }
-    
 }
-
