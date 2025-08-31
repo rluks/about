@@ -170,6 +170,8 @@ h2::after {
     padding-left: var(--space-5xl);
     padding-bottom: var(--space-4xl);
     overflow: hidden;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
 }
 
 .hero-text {
