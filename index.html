@@ -141,13 +141,7 @@
                         <div class="flip-card-front">
                             <div class="card-indicator">💪</div>
                             <h3>Drive to Improve</h3>
-                            <p>I'm rarely satisfied with status quo and have an inner need to keep pushing the envelope:</p>
-                            <ul>
-                                <li>I embrace change and like to see progress</li>
-                                <li>Always looking for ways to make things better</li>
-                                <li>Constantly seeking optimization opportunities</li>
-                                <li>Motivated by continuous improvement</li>
-                            </ul>
+                            <p>I'm rarely satisfied with status quo and have an inner need to keep pushing the envelope.</p>
                         </div>
                         <div class="flip-card-back">
                             <div class="card-indicator">😱</div>
@@ -169,13 +163,7 @@
                         <div class="flip-card-front">
                             <div class="card-indicator">💪</div>
                             <h3>Creative Problem Solving</h3>
-                            <p>I'm full of radical ideas and love solving problems:</p>
-                            <ul>
-                                <li>Both realistic and unorthodox solutions</li>
-                                <li>Thinking outside the box approaches</li>
-                                <li>Ask me about the "tallest building exercise"</li>
-                                <li>Combining different perspectives creatively</li>
-                            </ul>
+                            <p>I'm full of radical ideas and love solving problems.</p>
                         </div>
                         <div class="flip-card-back">
                             <div class="card-indicator">😱</div>
@@ -197,13 +185,7 @@
                         <div class="flip-card-front">
                             <div class="card-indicator">💪</div>
                             <h3>Empathetic</h3>
-                            <p>I never let my ego stand in the way:</p>
-                            <ul>
-                                <li>Understanding of others' feelings</li>
-                                <li>Strive to make things easy for everyone</li>
-                                <li>Being a team player comes naturally</li>
-                                <li>Putting team success before personal credit</li>
-                            </ul>
+                            <p>I never let my ego stand in the way.</p>
                         </div>
                         <div class="flip-card-back">
                             <div class="card-indicator">😱</div>
@@ -225,13 +207,7 @@
                         <div class="flip-card-front">
                             <div class="card-indicator">💪</div>
                             <h3>Calm & Understanding</h3>
-                            <p>I know it's not all rainbows – things break, people forget, we all make mistakes:</p>
-                            <ul>
-                                <li>Stay patient and understanding</li>
-                                <li>Keep a level head in challenging situations</li>
-                                <li>Accept that problems are part of the process</li>
-                                <li>Focus on solutions rather than blame</li>
-                            </ul>
+                            <p>I know it's not all rainbows – things break, people forget, we all make mistakes.</p>
                         </div>
                         <div class="flip-card-back">
                             <div class="card-indicator">😱</div>
@@ -253,13 +229,7 @@
                         <div class="flip-card-front">
                             <div class="card-indicator">💪</div>
                             <h3>Methodical & Focused</h3>
-                            <p>I'm minimalistic, organized, and systematic:</p>
-                            <ul>
-                                <li>Research and data-driven approach</li>
-                                <li>Spreadsheets and visualization tools</li>
-                                <li>Prototyping and testing methodologies</li>
-                                <li>Everything has its purpose and place</li>
-                            </ul>
+                            <p>I'm minimalistic, organized, and systematic.</p>
                         </div>
                         <div class="flip-card-back">
                             <div class="card-indicator">😱</div>
@@ -281,14 +251,7 @@
                         <div class="flip-card-front">
                             <div class="card-indicator">💪</div>
                             <h3>Curious Explorer</h3>
-                            <p>I explore diverse fields:</p>
-                            <ul>
-                                <li>Design and development</li>
-                                <li>Agile and marketing</li>
-                                <li>Nature, finance, fencing, diving...</li>
-                                <li>Broad skill set across many areas</li>
-                                <li>Master of none, but eager to learn!</li>
-                            </ul>
+                            <p>I explore diverse fields.</p>
                         </div>
                         <div class="flip-card-back">
                             <div class="card-indicator">😱</div>
@@ -337,6 +300,45 @@
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
+            
+            // Calculate and set equal heights for flip cards
+            function setFlipCardHeights() {
+                const flipCards = document.querySelectorAll('.flip-card');
+                let maxHeight = 0;
+                
+                // Reset heights to auto to measure natural height
+                flipCards.forEach(card => {
+                    const inner = card.querySelector('.flip-card-inner');
+                    const front = card.querySelector('.flip-card-front');
+                    const back = card.querySelector('.flip-card-back');
+                    
+                    inner.style.height = 'auto';
+                    front.style.position = 'static';
+                    back.style.position = 'static';
+                    
+                    const frontHeight = front.offsetHeight;
+                    const backHeight = back.offsetHeight;
+                    const cardHeight = Math.max(frontHeight, backHeight);
+                    
+                    if (cardHeight > maxHeight) {
+                        maxHeight = cardHeight;
+                    }
+                    
+                    // Reset positions
+                    front.style.position = 'absolute';
+                    back.style.position = 'absolute';
+                });
+                
+                // Set all cards to the maximum height
+                flipCards.forEach(card => {
+                    const inner = card.querySelector('.flip-card-inner');
+                    inner.style.height = maxHeight + 'px';
+                });
+            }
+            
+            // Set heights on load and resize
+            setFlipCardHeights();
+            window.addEventListener('resize', setFlipCardHeights);
         });
     </script>
 </body>
