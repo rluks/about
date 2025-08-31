@@ -149,7 +149,6 @@ h2::after {
     line-height: 1.4;
     text-align: left;
     max-width: 450px;
-    text-shadow: var(--text-shadow);
 }
 
 .hero-text-white {
