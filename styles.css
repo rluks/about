@@ -46,6 +46,11 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.7), 1px 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 8px 20px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-card-hover: 0 8px 25px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-subtle: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-strength: 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-strength-hover: 0 8px 24px rgba(0,0,0,0.1);
     
     /* Border radius */
     --radius-sm: 0.375rem;  /* 6px */
@@ -130,7 +135,7 @@ h2::after {
     position: relative;
     height: 500px;
     margin: -24px -24px 64px -24px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.0) 50%,rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.7) 100%), url('romanluks.jpg');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.7) 100%), url('romanluks.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -223,7 +228,7 @@ section:last-of-type {
 
 .spark-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-card);
     border-color: var(--color-primary);
 }
 
@@ -312,20 +317,20 @@ section:last-of-type {
 }
 
 .spark-item summary:hover {
-    background: rgba(251, 126, 20, 0.05);
+    background: var(--color-primary-light);
 }
 
 .spark-item summary h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #2D3748;
+    color: var(--color-text-primary);
     margin: 0;
 }
 
 .spark-item summary::after {
     content: '▼';
     font-size: 16px;
-    color: #FB7E14;
+    color: var(--color-primary);
     transition: transform 0.3s ease;
 }
 
@@ -358,7 +363,7 @@ section:last-of-type {
 
 .flip-card:hover .flip-card-front,
 .flip-card:hover .flip-card-back {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .flip-card input[type="checkbox"] {
@@ -418,7 +423,7 @@ section:last-of-type {
 }
 
 .flip-card-front h3 {
-    color: #2D3748;
+    color: var(--color-text-primary);
 }
 
 .flip-card-front p, 
@@ -426,7 +431,7 @@ section:last-of-type {
 .flip-card-back p, 
 .flip-card-back ul {
     font-size: 15px;
-    color: #718096;
+    color: var(--color-text-muted);
     line-height: 1.5;
     text-align: left;
     width: 100%;
@@ -459,18 +464,18 @@ section:last-of-type {
 
 /* ===== STRENGTH CARDS (LEGACY - POTENTIALLY UNUSED) ===== */
 .strength-card {
-    background: white;
+    background: var(--color-bg-white);
     padding: 24px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid #E2E8F0;
+    box-shadow: var(--shadow-strength);
+    border: 1px solid var(--color-border-light);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .strength-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-strength-hover);
 }
 
 .strength-icon {
@@ -482,12 +487,12 @@ section:last-of-type {
 .strength-card h3 {
     font-size: 16px;
     font-weight: 600;
-    color: #2D3748;
+    color: var(--color-text-primary);
     margin-bottom: 8px;
 }
 
 .strength-card p {
-    color: #718096;
+    color: var(--color-text-muted);
     font-size: 14px;
     line-height: 1.5;
 }
@@ -501,19 +506,19 @@ section:last-of-type {
 }
 
 .weakness-item {
-    background: rgba(251, 126, 20, 0.05);
+    background: var(--color-primary-light);
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid #FB7E14;
+    border-left: 4px solid var(--color-primary);
 }
 
 .weakness-item strong {
-    color: #2D3748;
+    color: var(--color-text-primary);
     font-weight: 600;
 }
 
 .weakness-item br + * {
-    color: #718096;
+    color: var(--color-text-muted);
     font-size: 14px;
 }
 
@@ -537,7 +542,7 @@ section:last-of-type {
     font-weight: 500;
     transition: all 0.2s ease;
     cursor: default;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-subtle);
 }
 
 
@@ -551,7 +556,7 @@ section:last-of-type {
 }
 
 .contact-link {
-    color: #FB7E14;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     font-size: 18px;
@@ -559,7 +564,7 @@ section:last-of-type {
 }
 
 .contact-link:hover {
-    color: #E56B0C;
+    color: var(--color-primary-hover);
 }
 
 /* ===== HERO ANIMATIONS ===== */
