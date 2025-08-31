@@ -286,8 +286,9 @@ h2::after {
 }
 
 .flip-card-back {
-    background: #FB7E14;
-    color: white;
+    background: white;
+    color: #2D3748;
+    border-left: 4px solid #1481FB;
     transform: rotateY(180deg);
 }
 
@@ -312,7 +313,7 @@ h2::after {
 .flip-card-back p, .flip-card-back ul {
     font-size: 15px;
     line-height: 1.5;
-    opacity: 0.95;
+    color: #718096;
     text-align: left;
     width: 100%;
 }
@@ -336,7 +337,7 @@ h2::after {
 }
 
 .flip-card-back ul {
-    color: white;
+    color: #718096;
 }
 
 .card-indicator {
