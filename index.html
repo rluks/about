@@ -91,7 +91,7 @@
             </div>
         </section>
 
-        <section class="fade-in">
+        <section class="fade-in section-alt">
             <h2>Career 💼</h2>
             <p class="intro-text">Check out my <a href="https://www.linkedin.com/in/romanluks/" target="_blank" style="color: #FB7E14; text-decoration: none;">LinkedIn profile</a> or <a href="https://romanluks.eu/resume.pdf" target="_blank" style="color: #FB7E14; text-decoration: none;">resume</a> for the full career scoop.</p>
         </section>
@@ -110,7 +110,7 @@
             <p class="intro-text">Typically, I input my last name as Luks. Even in today's modern age of UTF-8, some systems still fail miserably and encode the last character as a question mark or something…</p>
         </section>
 
-        <section class="fade-in">
+        <section class="fade-in section-alt">
             <h2>Work style 👔</h2>
             <p class="intro-text">I enjoy working in a <strong>small autonomous team</strong> and solving problems together on our own.</p>
             <p class="intro-text">I enjoy <strong>improving things</strong> for people, making them easier, understandable and automated. I enjoy throwing around ideas for solving problems and then trying them out to see which one works best.</p>
@@ -139,7 +139,7 @@
             <p class="intro-text">These are my strengths (💪), click cards to reveal weaknesses (😱).</p>
             
             <div class="flip-cards-grid fade-in" role="list">
-                <div class="flip-card" role="listitem">
+                <div class="flip-card stagger-1" role="listitem">
                     <input type="checkbox" id="card1" aria-describedby="card1-front card1-back">
                     <label for="card1" class="flip-card-inner" aria-label="Flip to reveal weakness">
                         <div class="flip-card-front" id="card1-front">
@@ -161,7 +161,7 @@
                     </label>
                 </div>
 
-                <div class="flip-card">
+                <div class="flip-card stagger-2">
                     <input type="checkbox" id="card2">
                     <label for="card2" class="flip-card-inner">
                         <div class="flip-card-front">
@@ -183,7 +183,7 @@
                     </label>
                 </div>
 
-                <div class="flip-card">
+                <div class="flip-card stagger-3">
                     <input type="checkbox" id="card3">
                     <label for="card3" class="flip-card-inner">
                         <div class="flip-card-front">
@@ -205,7 +205,7 @@
                     </label>
                 </div>
 
-                <div class="flip-card">
+                <div class="flip-card stagger-4">
                     <input type="checkbox" id="card4">
                     <label for="card4" class="flip-card-inner">
                         <div class="flip-card-front">
@@ -227,7 +227,7 @@
                     </label>
                 </div>
 
-                <div class="flip-card">
+                <div class="flip-card stagger-5">
                     <input type="checkbox" id="card5">
                     <label for="card5" class="flip-card-inner">
                         <div class="flip-card-front">
@@ -249,7 +249,7 @@
                     </label>
                 </div>
 
-                <div class="flip-card">
+                <div class="flip-card stagger-6">
                     <input type="checkbox" id="card6">
                     <label for="card6" class="flip-card-inner">
                         <div class="flip-card-front">
@@ -305,6 +305,12 @@
             const fadeElements = document.querySelectorAll('.fade-in');
             fadeElements.forEach(element => {
                 observer.observe(element);
+            });
+            
+            // Observe flip cards for staggered animation
+            const flipCards = document.querySelectorAll('.flip-card');
+            flipCards.forEach(card => {
+                observer.observe(card);
             });
             
             // Calculate and set equal heights for flip cards
