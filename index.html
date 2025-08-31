@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roman Lukš - UX Designer</title>
+    <meta name="description" content="Roman Lukš is a UX Designer with technical, creative, and collaborative skills. Passionate about systematically improving user experiences.">
+    <meta name="author" content="Roman Lukš">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header class="hero">
+        <header class="hero" role="banner">
             <div class="hero-text">
                 <span class="hero-text-white">Hello</span><span class="hero-text-orange">, I love to systematically improve experiences.</span>
             </div>
         </header>
 
-        <section class="fade-in">
-            <h2>Spark ✨</h2>
+        <main>
+
+        <section class="fade-in" aria-labelledby="spark-heading">
+            <h2 id="spark-heading">Spark ✨</h2>
             <p class="intro-text">I bring a <strong>unique mix</strong> of technical, creative, and <strong>collaborative skills</strong> to UX design.</p>
-            <div class="spark-grid">
-                <div class="spark-item fade-in fade-in-delay-1">
-                    <input type="checkbox" id="spark1">
+            <div class="spark-grid" role="list">
+                <div class="spark-item fade-in fade-in-delay-1" role="listitem">
+                    <input type="checkbox" id="spark1" aria-describedby="spark1-content">
                     <label for="spark1" class="spark-header">
                         <h3 data-icon="🎮">Passion for designing experiences</h3>
                     </label>
-                    <div class="spark-content">
+                    <div class="spark-content" id="spark1-content">
                         <div>
                             <p>Interest in making games uncovered my underlying passion for designing experiences. I love nicely polished games with excellent game feel and am curious about applying it in 'serious' applications.</p>
                         </div>
@@ -130,15 +134,15 @@
             </ul>
         </section>
 
-        <section class="fade-in">
-            <h2>Strengths & Weaknesses</h2>
+        <section class="fade-in" aria-labelledby="strengths-heading">
+            <h2 id="strengths-heading">Strengths & Weaknesses</h2>
             <p class="intro-text">These are my strengths (💪), click cards to reveal weaknesses (😱).</p>
             
-            <div class="flip-cards-grid fade-in">
-                <div class="flip-card">
-                    <input type="checkbox" id="card1">
-                    <label for="card1" class="flip-card-inner">
-                        <div class="flip-card-front">
+            <div class="flip-cards-grid fade-in" role="list">
+                <div class="flip-card" role="listitem">
+                    <input type="checkbox" id="card1" aria-describedby="card1-front card1-back">
+                    <label for="card1" class="flip-card-inner" aria-label="Flip to reveal weakness">
+                        <div class="flip-card-front" id="card1-front">
                             <div class="card-indicator">💪</div>
                             <h3>Drive to Improve</h3>
                             <p>I'm rarely satisfied with status quo and have an inner need to keep pushing the envelope.</p>
@@ -270,12 +274,14 @@
             </div>
         </section>
 
-        <section class="fade-in">
-            <h2>Contact</h2>
+        <section class="fade-in" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
             <div class="contact-links">
-             Let's start with hello: <span class="contact-link">&#114;&#108;&#117;&#107;&#115;&#64;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</span>
+             Let's start with hello: <a href="mailto:rluks@protonmail.com" class="contact-link" aria-label="Send email to Roman">rluks@protonmail.com</a>
             </div>
         </section>
+
+        </main>
     </div>
     
     <script>
