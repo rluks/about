@@ -509,6 +509,16 @@
         flipCards.forEach((card) => {
           observer.observe(card);
         });
+
+        // Hero text parallax effect
+        const heroText = document.querySelector(".hero-text");
+        if (heroText) {
+          window.addEventListener("scroll", () => {
+            const scrolled = window.pageYOffset;
+            const parallaxSpeed = 0.3;
+            heroText.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+          });
+        }
       });
     </script>
   </body>

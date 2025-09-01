@@ -237,6 +237,7 @@ h2::after {
   padding: var(--space-2xl) var(--space-5xl) var(--space-3xl);
   border-bottom-left-radius: var(--radius-xl);
   border-bottom-right-radius: var(--radius-xl);
+  overflow: hidden;
 }
 
 .hero-text {
