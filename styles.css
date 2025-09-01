@@ -447,7 +447,7 @@ section:last-of-type {
 .flip-card-inner {
     position: relative;
     inline-size: 100%;
-    block-size: auto;
+    block-size: 265px;
     text-align: center;
     transition: transform var(--transition-slow);
     transform-style: preserve-3d;

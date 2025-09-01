@@ -346,45 +346,6 @@
             flipCards.forEach(card => {
                 observer.observe(card);
             });
-            
-            // Calculate and set equal heights for flip cards
-            function setFlipCardHeights() {
-                const flipCards = document.querySelectorAll('.flip-card');
-                let maxHeight = 0;
-                
-                // Reset heights to auto to measure natural height
-                flipCards.forEach(card => {
-                    const inner = card.querySelector('.flip-card-inner');
-                    const front = card.querySelector('.flip-card-front');
-                    const back = card.querySelector('.flip-card-back');
-                    
-                    inner.style.height = 'auto';
-                    front.style.position = 'static';
-                    back.style.position = 'static';
-                    
-                    const frontHeight = front.offsetHeight;
-                    const backHeight = back.offsetHeight;
-                    const cardHeight = Math.max(frontHeight, backHeight);
-                    
-                    if (cardHeight > maxHeight) {
-                        maxHeight = cardHeight;
-                    }
-                    
-                    // Reset positions
-                    front.style.position = 'absolute';
-                    back.style.position = 'absolute';
-                });
-                
-                // Set all cards to the maximum height
-                flipCards.forEach(card => {
-                    const inner = card.querySelector('.flip-card-inner');
-                    inner.style.height = maxHeight + 'px';
-                });
-            }
-            
-            // Set heights on load and resize
-            setFlipCardHeights();
-            window.addEventListener('resize', setFlipCardHeights);
         });
     </script>
 </body>
