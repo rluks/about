@@ -245,14 +245,21 @@ h2::after {
   color: var(--color-white);
   opacity: 0;
   transform: translateY(50px);
-  animation: slideUpFadeIn 1.2s ease-out 1.2s forwards;
+}
+
+.hero-p1 {
+  animation: slideUpFadeIn 1.2s ease-out 0.8s forwards;
+}
+
+.hero-p2 {
+  animation: slideUpFadeIn 1.2s ease-out 1s forwards;
 }
 
 .hero-text-orange {
   color: var(--color-primary);
   opacity: 0;
   transform: translateY(50px);
-  animation: slideUpFadeIn 1.2s ease-out 0.5s forwards;
+  animation: slideUpFadeIn 1.2s ease-out 0.4s forwards;
 }
 
 .hero-text span {
