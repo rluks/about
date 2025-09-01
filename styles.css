@@ -15,7 +15,7 @@
     --color-primary-hover: #D45A00;
     --color-primary-light: rgba(229, 107, 12, 0.05);
     --color-complementary: #2563EB;
-    --color-complementary-light: rgba(37, 99, 235, 0.08);
+    --color-complementary-light: #e9eef8;
     --color-complementary-medium: rgba(37, 99, 235, 0.12);
     --color-complementary-border: rgba(37, 99, 235, 0.15);
     --color-text-primary: #2D3748;
@@ -188,14 +188,14 @@ h2::after {
     color: var(--color-white);
     opacity: 0;
     transform: translateY(50px);
-    animation: slideUpFadeIn 1.2s ease-out 0.5s forwards;
+    animation: slideUpFadeIn 1.2s ease-out 1.2s forwards;
 }
 
 .hero-text-orange {
     color: var(--color-primary);
     opacity: 0;
     transform: translateY(50px);
-    animation: slideUpFadeIn 1.2s ease-out 1.2s forwards;
+    animation: slideUpFadeIn 1.2s ease-out 0.5s forwards;
 }
 
 .hero-text span {
@@ -223,10 +223,7 @@ section:last-of-type {
 /* Alternating section backgrounds for visual rhythm */
 .section-alt {
     /* Sophisticated gradient background instead of solid color */
-    background: linear-gradient(135deg, 
-        var(--color-complementary-light) 0%, 
-        var(--color-complementary-medium) 50%, 
-        var(--color-complementary-light) 100%);
+    background: var(--color-complementary-light);
     
     /* Enhanced spacing and structure */
     margin-left: calc(-1 * var(--space-lg));
@@ -239,9 +236,6 @@ section:last-of-type {
     
     /* Maintain primary text color for better integration */
     color: var(--color-text-primary);
-    
-    /* Subtle backdrop filter effect for modern look */
-    backdrop-filter: blur(0.5px);
     
     /* Enhanced shadow for depth */
     box-shadow: 0 2px 8px var(--color-complementary-light), 
