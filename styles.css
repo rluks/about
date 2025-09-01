@@ -572,24 +572,37 @@ section:last-of-type {
 .work-style-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-    margin-top: var(--space-lg);
+    gap: var(--space-2xl);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-lg);
 }
 
-@media (max-width: 768px) {
-    .work-style-grid {
-        grid-template-columns: 1fr;
-    }
+.work-style-column {
+    background: var(--color-bg-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-style-column:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.work-style-column:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .work-style-column h3 {
     color: var(--color-text-primary);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: 600;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-md);
 }
 
 .work-style-column ul {
@@ -603,15 +616,41 @@ section:last-of-type {
     color: var(--color-text-secondary);
     font-size: var(--font-size-base);
     position: relative;
-    padding-left: var(--space-lg);
+    padding-left: var(--space-xl);
+}
+
+.work-style-column li:first-child {
+    padding-top: var(--space-sm);
+}
+
+.work-style-column li:last-child {
+    padding-bottom: 0;
 }
 
 .work-style-column li::before {
     content: "•";
     color: var(--color-primary);
     position: absolute;
-    left: 0;
+    left: var(--space-sm);
+    top: var(--space-sm);
     font-weight: bold;
+    font-size: var(--font-size-lg);
+}
+
+@media (max-width: 768px) {
+    .work-style-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .work-style-column {
+        padding: var(--space-md);
+    }
+    
+    .work-style-column h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-md);
+    }
 }
 
 /* ===== CONTACT SECTION ===== */
