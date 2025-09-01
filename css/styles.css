@@ -419,6 +419,8 @@ section:has(.work-style-grid)::after {
 /* Sparkle background decoration */
 .spark-grid::before {
   left: -350px;
+  top: 0;
+  transform: translateY(0);
   background-image: url("../images/sparkle.svg");
 }
 
