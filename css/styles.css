@@ -944,4 +944,10 @@ section:has(.work-style-grid)::after {
     text-align: center;
     margin-top: var(--space-sm);
   }
+
+  /* Hide background decorations on mobile */
+  .spark-grid::before,
+  section:has(.work-style-grid)::after {
+    display: none;
+  }
 }
