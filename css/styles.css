@@ -158,6 +158,19 @@ a:focus-visible {
   padding: var(--space-lg);
 }
 
+/* ===== LINKS ===== */
+.highlight-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color var(--transition-fast);
+}
+
+.highlight-link:hover,
+.highlight-link:focus {
+  border-bottom-color: var(--color-primary);
+}
+
 /* ===== TYPOGRAPHY ===== */
 h1 {
   font-family: var(--font-family-heading);
@@ -229,6 +242,7 @@ h2::after {
   overflow: hidden;
   border-bottom-left-radius: var(--radius-xl);
   border-bottom-right-radius: var(--radius-xl);
+  contain: layout style paint;
 }
 
 .hero-text {
@@ -684,6 +698,11 @@ section:has(.work-style-grid)::after {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.work-style-column:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .work-style-column:focus-within {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
@@ -743,21 +762,6 @@ section:has(.work-style-grid)::after {
   background-position: center;
 }
 
-@media (max-width: 768px) {
-  .work-style-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-
-  .work-style-column {
-    padding: var(--space-md);
-  }
-
-  .work-style-column h3 {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--space-md);
-  }
-}
 
 /* ===== CONTACT SECTION ===== */
 .contact-links {
@@ -865,9 +869,10 @@ section:has(.work-style-grid)::after {
     height: 300px;
     margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md))
       var(--space-3xl) calc(-1 * var(--space-md));
-    padding-left: var(--space-xl);
+    padding: var(--space-md);
     padding-bottom: var(--space-2xl);
     justify-content: center;
+    align-items: center;
   }
 
   .hero-text {
@@ -899,6 +904,27 @@ section:has(.work-style-grid)::after {
   .flip-card-back {
     height: auto;
     min-height: 300px;
+  }
+
+  /* Work style grid mobile adaptations */
+  .work-style-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .work-style-column {
+    padding: var(--space-md);
+  }
+
+  .work-style-column h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .work-style-easy-going::before {
+    width: 80px;
+    height: 54px;
+    margin-bottom: var(--space-lg);
   }
 
   .contact-links {
