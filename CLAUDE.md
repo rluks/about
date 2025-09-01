@@ -1,18 +1,33 @@
-# Claude Code Instructions
+# Claude Code Instructions - Modern Web Development
+
+## Core Principles
+- **Semantic HTML first** - proper document structure and accessibility
+- **Progressive enhancement** - core functionality works without JS
+- **Mobile-first responsive design** - design for constraints first
+- **Performance by default** - optimize images, minimize layout shifts
+- **Clean, maintainable code** - consistent naming, clear organization
 
 ## CSS Guidelines
+- Use modern layout (Grid/Flexbox) over floats or positioning hacks
+- Implement consistent design system with CSS custom properties
+- Write mobile-first media queries with `min-width`
+- Follow DRY principle - extract common patterns into utilities
+- Use semantic class names (BEM or similar methodology)
 - **NEVER** use inline styles in HTML (`<style>` tags or `style=""` attributes)
 - **ALWAYS** put all CSS in the external `styles.css` file
-- If you find inline styles, move them to the CSS file immediately
-- Use semantic CSS classes and maintain existing naming conventions
 
-## DRY Principle (Don't Repeat Yourself)
-- **ALWAYS** extract common properties into shared CSS selectors
-- **NEVER** duplicate identical CSS properties across multiple rules
-- Create shared classes or grouped selectors for common styling patterns
-- Example: `.selector1, .selector2 { /* shared properties */ }`
-- Only define unique properties separately for each selector
-- This makes the code more maintainable and allows easy global adjustments
+## JavaScript Best Practices
+- Use modern ES features when appropriate (modules, async/await, optional chaining)
+- Implement proper error handling and loading states
+- Prefer native APIs over heavy libraries when possible
+- Write self-documenting code with meaningful names
+
+## When Working on This Project
+- Follow existing code patterns and conventions
+- Test changes across different screen sizes
+- Ensure accessibility with proper focus management
+- Optimize for performance without over-engineering
+- Apply DRY principle to avoid code duplication
 
 ## Project Structure
 - HTML: `index.html`
@@ -20,9 +35,7 @@
 - Fonts: `fonts/` directory (Inter Variable)
 - Images: `images/` directory (SVGs, photos)
 
-## Development Practices
-- Follow existing code patterns and conventions
-- Use CSS variables for consistent styling
-- Maintain responsive design principles
-- Apply DRY principle to avoid code duplication
-- Test changes thoroughly before completion
+## Flexibility Notes
+- Break rules when project constraints require it
+- Prioritize user experience over perfect code architecture
+- Ask for clarification when requirements conflict with best practices
