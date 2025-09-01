@@ -1,4 +1,48 @@
 /* ===== IMPORTS ===== */
+
+/* ===== INLINE STYLES MOVED FROM HTML ===== */
+/* Micro dot grid pattern */
+body {
+    background-image: radial-gradient(
+        circle,
+        rgba(229, 107, 12, 0.1) 2px,
+        transparent 2px
+    );
+    background-size: 24px 24px;
+}
+
+/* Slide-in animations for spark section */
+.slide-in {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-delay-1 {
+    transition-delay: 0.1s;
+}
+.slide-in-delay-2 {
+    transition-delay: 0.2s;
+}
+.slide-in-delay-3 {
+    transition-delay: 0.3s;
+}
+.slide-in-delay-4 {
+    transition-delay: 0.4s;
+}
+.slide-in-delay-5 {
+    transition-delay: 0.5s;
+}
+.slide-in-delay-6 {
+    transition-delay: 0.6s;
+}
+
+/* ===== IMPORTS ===== */
 @font-face {
     font-family: 'Inter Variable';
     font-style: normal;

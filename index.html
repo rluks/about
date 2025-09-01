@@ -1,375 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roman Lukš - UX Designer</title>
-    <meta name="description" content="Roman Lukš is a UX Designer with technical, creative, and collaborative skills. Passionate about systematically improving user experiences.">
-    <meta name="author" content="Roman Lukš">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Micro dot grid pattern */
-        body {
-            background-image: radial-gradient(circle, rgba(229, 107, 12, 0.1) 2px, transparent 2px);
-            background-size: 24px 24px;
-        }
-        
-        /* Slide-in animations for spark section */
-        .slide-in {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .slide-in.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .slide-in-delay-1 { transition-delay: 0.1s; }
-        .slide-in-delay-2 { transition-delay: 0.2s; }
-        .slide-in-delay-3 { transition-delay: 0.3s; }
-        .slide-in-delay-4 { transition-delay: 0.4s; }
-        .slide-in-delay-5 { transition-delay: 0.5s; }
-        .slide-in-delay-6 { transition-delay: 0.6s; }
-    </style>
-</head>
-<body>
+    <meta
+      name="description"
+      content="Roman Lukš is a UX Designer with technical, creative, and collaborative skills. Passionate about systematically improving user experiences."
+    />
+    <meta name="author" content="Roman Lukš" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header class="hero" role="banner">
-            <div class="hero-text">
-                <span class="hero-text-orange">Hello,</span><span class="hero-text-white"> I systematically improve experiences.</span>
-            </div>
-        </header>
+      <header class="hero" role="banner">
+        <div class="hero-text">
+          <span class="hero-text-orange">Hello,</span
+          ><span class="hero-text-white">
+            I systematically improve experiences.</span
+          >
+        </div>
+      </header>
 
-        <main>
-
+      <main>
         <section class="fade-in" aria-labelledby="spark-heading">
-            <h2 id="spark-heading">Spark ✨</h2>
-            <p class="intro-text">My individual advantage comes from a <strong>unique cocktail of experiences</strong>.</p>
-            <div class="spark-grid" role="list">
-                <div class="spark-item slide-in slide-in-delay-1" role="listitem">
-                    <input type="checkbox" id="spark1" aria-describedby="spark1-content">
-                    <label for="spark1" class="spark-header">
-                        <h3 data-icon="🎮">Delightful Experiences</h3>
-                    </label>
-                    <div class="spark-content" id="spark1-content">
-                        <div>
-                            <p>My love for making games and their irresistible “<a href="https://romanluks.eu/blog/how-can-i-implement-game-feel-in-my-game/" target="_blank">game feel</a>” revealed my <strong>passion for crafting experiences</strong>. Translating that delight into non‑gaming products <strong>boosts user engagement and drives revenue</strong>.</p>
-                        </div>
-                    </div>
+          <h2 id="spark-heading">Spark ✨</h2>
+          <p class="intro-text">
+            My individual advantage comes from a
+            <strong>unique cocktail of experiences</strong>.
+          </p>
+          <div class="spark-grid" role="list">
+            <div class="spark-item slide-in slide-in-delay-1" role="listitem">
+              <input
+                type="checkbox"
+                id="spark1"
+                aria-describedby="spark1-content"
+              />
+              <label for="spark1" class="spark-header">
+                <h3 data-icon="🎮">Delightful Experiences</h3>
+              </label>
+              <div class="spark-content" id="spark1-content">
+                <div>
+                  <p>
+                    My love for making games and their irresistible “<a
+                      href="https://romanluks.eu/blog/how-can-i-implement-game-feel-in-my-game/"
+                      target="_blank"
+                      >game feel</a
+                    >” revealed my
+                    <strong>passion for crafting experiences</strong>.
+                    Translating that delight into non‑gaming products
+                    <strong>boosts user engagement and drives revenue</strong>.
+                  </p>
                 </div>
-                <div class="spark-item slide-in slide-in-delay-2">
-                    <input type="checkbox" id="spark2">
-                    <label for="spark2" class="spark-header">
-                        <h3 data-icon="💻">Developer‑Friendly</h3>
-                    </label>
-                    <div class="spark-content">
-                        <div>
-                            <p>My <strong>software development background</strong> helps me <strong>speak the same language as developers</strong>, easing communication and cooperation to design feasible solutions.</p>
-                            <p>I can code myself (badly) to build prototypes and automate boring stuff. Claude Code makes it pretty easy!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="spark-item slide-in slide-in-delay-3">
-                    <input type="checkbox" id="spark3">
-                    <label for="spark3" class="spark-header">
-                        <h3 data-icon="🤝">Agile & team facilitation</h3>
-                    </label>
-                    <div class="spark-content">
-                        <div>
-                            <p>By serving as a Scrum Master, I gained a deep understanding of agile principles, acquired experience in facilitating workshops and meetings, and developed an awareness of team organization.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="spark-item slide-in slide-in-delay-4">
-                    <input type="checkbox" id="spark4">
-                    <label for="spark4" class="spark-header">
-                        <h3 data-icon="🔍">Research and data analysis</h3>
-                    </label>
-                    <div class="spark-content">
-                        <div>
-                            <p>Working on my diploma thesis really opened my eyes to the world of research and data analysis. I gained basic UX research skills through UXWell course.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="spark-item slide-in slide-in-delay-5">
-                    <input type="checkbox" id="spark5">
-                    <label for="spark5" class="spark-header">
-                        <h3 data-icon="📊">Marketing background</h3>
-                    </label>
-                    <div class="spark-content">
-                        <div>
-                            <p>I studied marketing and applied the lessons to promote a small indie game. It involved developing marketing strategy, blogging, networking, user testing, prioritizing feedback and more.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="spark-item slide-in slide-in-delay-6">
-                    <input type="checkbox" id="spark6">
-                    <label for="spark6" class="spark-header">
-                        <h3 data-icon="💬">Blogging and storytelling</h3>
-                    </label>
-                    <div class="spark-content">
-                        <div>
-                            <p>Blogging forces me to formulate my thoughts clearly and concisely. I routinely rewrite my sentences. ChatGPT is a great help. I want to improve my storytelling skills.</p>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div class="spark-item slide-in slide-in-delay-2">
+              <input type="checkbox" id="spark2" />
+              <label for="spark2" class="spark-header">
+                <h3 data-icon="💻">Developer‑Friendly</h3>
+              </label>
+              <div class="spark-content">
+                <div>
+                  <p>
+                    My <strong>software development background</strong> helps me
+                    <strong>speak the same language as developers</strong>,
+                    easing communication and cooperation to design feasible
+                    solutions.
+                  </p>
+                  <p>
+                    I can code myself (badly) to build prototypes and automate
+                    boring stuff. Claude Code makes it pretty easy!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="spark-item slide-in slide-in-delay-3">
+              <input type="checkbox" id="spark3" />
+              <label for="spark3" class="spark-header">
+                <h3 data-icon="🤝">Agile & team facilitation</h3>
+              </label>
+              <div class="spark-content">
+                <div>
+                  <p>
+                    By serving as a Scrum Master, I gained a deep understanding
+                    of agile principles, acquired experience in facilitating
+                    workshops and meetings, and developed an awareness of team
+                    organization.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="spark-item slide-in slide-in-delay-4">
+              <input type="checkbox" id="spark4" />
+              <label for="spark4" class="spark-header">
+                <h3 data-icon="🔍">Research and data analysis</h3>
+              </label>
+              <div class="spark-content">
+                <div>
+                  <p>
+                    Working on my diploma thesis really opened my eyes to the
+                    world of research and data analysis. I gained basic UX
+                    research skills through UXWell course.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="spark-item slide-in slide-in-delay-5">
+              <input type="checkbox" id="spark5" />
+              <label for="spark5" class="spark-header">
+                <h3 data-icon="📊">Marketing background</h3>
+              </label>
+              <div class="spark-content">
+                <div>
+                  <p>
+                    I studied marketing and applied the lessons to promote a
+                    small indie game. It involved developing marketing strategy,
+                    blogging, networking, user testing, prioritizing feedback
+                    and more.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="spark-item slide-in slide-in-delay-6">
+              <input type="checkbox" id="spark6" />
+              <label for="spark6" class="spark-header">
+                <h3 data-icon="💬">Blogging and storytelling</h3>
+              </label>
+              <div class="spark-content">
+                <div>
+                  <p>
+                    Blogging forces me to formulate my thoughts clearly and
+                    concisely. I routinely rewrite my sentences. ChatGPT is a
+                    great help. I want to improve my storytelling skills.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="fade-in section-alt">
-            <h2>Career 💼</h2>
-            <p class="intro-text">Check out my <a href="https://www.linkedin.com/in/romanluks/" target="_blank" style="color: #FB7E14; text-decoration: none;">LinkedIn profile</a> or <a href="https://romanluks.eu/resume.pdf" target="_blank" style="color: #FB7E14; text-decoration: none;">resume</a> for the full career scoop.</p>
+          <h2>Career 💼</h2>
+          <p class="intro-text">
+            Check out my
+            <a
+              href="https://www.linkedin.com/in/romanluks/"
+              target="_blank"
+              style="color: #fb7e14; text-decoration: none"
+              >LinkedIn profile</a
+            >
+            or
+            <a
+              href="https://romanluks.eu/resume.pdf"
+              target="_blank"
+              style="color: #fb7e14; text-decoration: none"
+              >resume</a
+            >
+            for the full career scoop.
+          </p>
         </section>
 
         <section class="fade-in">
-            <h2>Projects 🎨</h2>
-            <p class="intro-text">My <strong>creative itch</strong> is a curse and a blessing. I made all kinds of stuff: UX projects, games, apps, videos, stories… check out the <a href="https://romanluks.eu/tag/project/" style="color: #FB7E14; text-decoration: none;">project tag</a>.</p>
-            <p class="intro-text">There's a ton of useless junk… pardon useful junk on my <a href="https://romanluks.eu/category/blog/" style="color: #FB7E14; text-decoration: none;">blog</a>. You <em>do</em> read my <strong>blog</strong>, don't you? 😉</p>
-            <p class="intro-text">I used to be quite into <strong>game development</strong> and <strong>VR</strong>. I participated in multiple gamejams (gamedev hackathons), and I volunteered on multiple game industry conferences. I'm proud that an <a href="https://www.gamedeveloper.com/business/softy-simness-postmortem" style="color: #FB7E14; text-decoration: none;">article about my VR research</a> was featured on Game Developer website.</p>
-            <p class="intro-text">I'm an open source fan on <a href="https://github.com/rluks/" style="color: #FB7E14; text-decoration: none;">GitHub</a> and <a href="https://bitbucket.org/rluks/" style="color: #FB7E14; text-decoration: none;">Bitbucket</a></p>
+          <h2>Projects 🎨</h2>
+          <p class="intro-text">
+            My <strong>creative itch</strong> is a curse and a blessing. I made
+            all kinds of stuff: UX projects, games, apps, videos, stories… check
+            out the
+            <a
+              href="https://romanluks.eu/tag/project/"
+              style="color: #fb7e14; text-decoration: none"
+              >project tag</a
+            >.
+          </p>
+          <p class="intro-text">
+            There's a ton of useless junk… pardon useful junk on my
+            <a
+              href="https://romanluks.eu/category/blog/"
+              style="color: #fb7e14; text-decoration: none"
+              >blog</a
+            >. You <em>do</em> read my <strong>blog</strong>, don't you? 😉
+          </p>
+          <p class="intro-text">
+            I used to be quite into <strong>game development</strong> and
+            <strong>VR</strong>. I participated in multiple gamejams (gamedev
+            hackathons), and I volunteered on multiple game industry
+            conferences. I'm proud that an
+            <a
+              href="https://www.gamedeveloper.com/business/softy-simness-postmortem"
+              style="color: #fb7e14; text-decoration: none"
+              >article about my VR research</a
+            >
+            was featured on Game Developer website.
+          </p>
+          <p class="intro-text">
+            I'm an open source fan on
+            <a
+              href="https://github.com/rluks/"
+              style="color: #fb7e14; text-decoration: none"
+              >GitHub</a
+            >
+            and
+            <a
+              href="https://bitbucket.org/rluks/"
+              style="color: #fb7e14; text-decoration: none"
+              >Bitbucket</a
+            >
+          </p>
         </section>
 
         <section class="fade-in">
-            <h2>Work style 👔</h2>
-            <div class="work-style-grid">
-                <div class="work-style-column">
-                    <h3>🤝 Collaborative</h3>
-                    <ul>
-                        <li>Clear communication</li>
-                        <li>Respectful and non-judgmental</li>
-                        <li>Receptive to feedback</li>
-                    </ul>
-                </div>
-                <div class="work-style-column">
-                    <h3>🎯 Organized</h3>
-                    <ul>
-                        <li>Methodical and systematic</li>
-                        <li>Detail-oriented</li>
-                    </ul>
-                </div>
-                <div class="work-style-column">
-                    <h3>📈 Adaptable</h3>
-                    <ul>
-                        <li>Continuous improvement</li>
-                        <li>Self-motivated learner</li>
-                        <li>Driven</li>
-                    </ul>
-                </div>
+          <h2>Work style 👔</h2>
+          <div class="work-style-grid">
+            <div class="work-style-column">
+              <h3>🤝 Collaborative</h3>
+              <ul>
+                <li>Clear communication</li>
+                <li>Respectful and non-judgmental</li>
+                <li>Receptive to feedback</li>
+              </ul>
             </div>
+            <div class="work-style-column">
+              <h3>🎯 Organized</h3>
+              <ul>
+                <li>Methodical and systematic</li>
+                <li>Detail-oriented</li>
+              </ul>
+            </div>
+            <div class="work-style-column">
+              <h3>📈 Adaptable</h3>
+              <ul>
+                <li>Continuous improvement</li>
+                <li>Self-motivated learner</li>
+                <li>Driven</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="intro-text">
+            I enjoy working in a <strong>small autonomous team</strong> and
+            solving problems together on our own.
+          </p>
+          <p class="intro-text">
+            I try my best not to judge people. We all are busy with our lives,
+            have flaws, and skeletons lurking in our closets.
+            <strong>Active listening</strong> changed my life! I'm staying aware
+            of cognitive <strong>biases</strong> especially when it comes to
+            research.
+          </p>
+
+          <p class="intro-text">
+            To tame the chaos, I approach things methodically, and I'm putting
+            effort into staying <strong>organized</strong>. I prefer clean
+            workspace without clutter. It helps me focus.
+          </p>
+          <p class="intro-text">
+            I enjoy <strong>improving things</strong> for people, making them
+            easier, understandable and automated. I enjoy throwing around ideas
+            for solving problems and then trying them out to see which one works
+            best.
+          </p>
+
+          <p class="intro-text">
+            I'm all about having <strong>fun at work</strong>, like when I throw
+            together '90s kids games' events and rock goofy backgrounds on our
+            video calls.
+          </p>
         </section>
 
         <section class="fade-in" aria-labelledby="strengths-heading">
-            <h2 id="strengths-heading">Strengths & Weaknesses</h2>
-            <p class="intro-text">These are my <strong>strengths</strong> 💪, click cards to reveal <strong>weaknesses</strong> 😱.</p>
-            
-            <div class="flip-cards-grid fade-in" role="list">
-                <div class="flip-card stagger-1" role="listitem">
-                    <input type="checkbox" id="card1" aria-describedby="card1-front card1-back">
-                    <label for="card1" class="flip-card-inner" aria-label="Flip to reveal weakness">
-                        <div class="flip-card-front" id="card1-front">
-                            <div class="card-indicator">💪</div>
-                            <h3>Drive to Improve</h3>
-                            <p>I'm rarely satisfied with status quo and have an inner need to keep pushing the envelope.</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-indicator">😱</div>
-                            <h3>Overthinking</h3>
-                            <p>Sometimes I get caught up thinking too much instead of taking action.</p>
-                            <p><strong>How I cope:</strong></p>
-                            <ul>
-                                <li>Starting with the smallest first task</li>
-                                <li>Breaking things down into manageable steps</li>
-                                <li>Setting time limits for decision-making</li>
-                            </ul>
-                        </div>
-                    </label>
-                </div>
+          <h2 id="strengths-heading">Strengths & Weaknesses</h2>
+          <p class="intro-text">
+            These are my <strong>strengths</strong> 💪, click cards to reveal
+            <strong>weaknesses</strong> 😱.
+          </p>
 
-                <div class="flip-card stagger-2">
-                    <input type="checkbox" id="card2">
-                    <label for="card2" class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-indicator">💪</div>
-                            <h3>Creative Problem Solving</h3>
-                            <p>I'm full of radical ideas and love solving problems.</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-indicator">😱</div>
-                            <h3>Thinking on the Spot</h3>
-                            <p>I rarely come up with witty responses immediately. I'd be terrible at rap battles!</p>
-                            <p><strong>How I cope:</strong></p>
-                            <ul>
-                                <li>Improving my public speaking skills</li>
-                                <li>Preparing ahead when possible</li>
-                                <li>Taking time to think before responding</li>
-                            </ul>
-                        </div>
-                    </label>
+          <div class="flip-cards-grid fade-in" role="list">
+            <div class="flip-card stagger-1" role="listitem">
+              <input
+                type="checkbox"
+                id="card1"
+                aria-describedby="card1-front card1-back"
+              />
+              <label
+                for="card1"
+                class="flip-card-inner"
+                aria-label="Flip to reveal weakness"
+              >
+                <div class="flip-card-front" id="card1-front">
+                  <div class="card-indicator">💪</div>
+                  <h3>Drive to Improve</h3>
+                  <p>
+                    I'm rarely satisfied with status quo and have an inner need
+                    to keep pushing the envelope.
+                  </p>
                 </div>
-
-                <div class="flip-card stagger-3">
-                    <input type="checkbox" id="card3">
-                    <label for="card3" class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-indicator">💪</div>
-                            <h3>Empathetic</h3>
-                            <p>I never let my ego stand in the way.</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-indicator">😱</div>
-                            <h3>Interrupting Others</h3>
-                            <p>I tend to interrupt others, though this has improved greatly over the last few years.</p>
-                            <p><strong>How I cope:</strong></p>
-                            <ul>
-                                <li>Practice active listening</li>
-                                <li>Focus on empathy and understanding</li>
-                                <li>Use willpower to keep getting better</li>
-                            </ul>
-                        </div>
-                    </label>
+                <div class="flip-card-back">
+                  <div class="card-indicator">😱</div>
+                  <h3>Overthinking</h3>
+                  <p>
+                    Sometimes I get caught up thinking too much instead of
+                    taking action.
+                  </p>
+                  <p><strong>How I cope:</strong></p>
+                  <ul>
+                    <li>Starting with the smallest first task</li>
+                    <li>Breaking things down into manageable steps</li>
+                    <li>Setting time limits for decision-making</li>
+                  </ul>
                 </div>
-
-                <div class="flip-card stagger-4">
-                    <input type="checkbox" id="card4">
-                    <label for="card4" class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-indicator">💪</div>
-                            <h3>Calm & Understanding</h3>
-                            <p>I know it's not all rainbows – things break, people forget, we all make mistakes.</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-indicator">😱</div>
-                            <h3>Lack of Authority</h3>
-                            <p>I'm often too informal and easygoing to command respect.</p>
-                            <p><strong>How I cope:</strong></p>
-                            <ul>
-                                <li>Servant leadership is a thing, isn't it?</li>
-                                <li>Focus on supporting the team</li>
-                                <li>Lead by example rather than command</li>
-                            </ul>
-                        </div>
-                    </label>
-                </div>
-
-                <div class="flip-card stagger-5">
-                    <input type="checkbox" id="card5">
-                    <label for="card5" class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-indicator">💪</div>
-                            <h3>Methodical & Focused</h3>
-                            <p>I'm minimalistic, organized, and systematic.</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-indicator">😱</div>
-                            <h3>Poor at Multitasking</h3>
-                            <p>I'm poor at multitasking and prefer focusing on one problem at a time.</p>
-                            <p><strong>How I cope:</strong></p>
-                            <ul>
-                                <li>Context switching is bad anyway!</li>
-                                <li>Organize work to minimize distractions</li>
-                                <li>Time-blocking for focused work sessions</li>
-                            </ul>
-                        </div>
-                    </label>
-                </div>
-
-                <div class="flip-card stagger-6">
-                    <input type="checkbox" id="card6">
-                    <label for="card6" class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-indicator">💪</div>
-                            <h3>Curious Explorer</h3>
-                            <p>I explore diverse fields.</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-indicator">😱</div>
-                            <h3>Poor Memory</h3>
-                            <p>I have poor memory for important things but remember all unnecessary details with clarity. D'oh!</p>
-                            <p><strong>How I cope:</strong></p>
-                            <ul>
-                                <li>Write everything down</li>
-                                <li>Use systems to stay organized</li>
-                                <li>Rely on tools and documentation</li>
-                            </ul>
-                        </div>
-                    </label>
-                </div>
-
+              </label>
             </div>
+
+            <div class="flip-card stagger-2">
+              <input type="checkbox" id="card2" />
+              <label for="card2" class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-indicator">💪</div>
+                  <h3>Creative Problem Solving</h3>
+                  <p>I'm full of radical ideas and love solving problems.</p>
+                </div>
+                <div class="flip-card-back">
+                  <div class="card-indicator">😱</div>
+                  <h3>Thinking on the Spot</h3>
+                  <p>
+                    I rarely come up with witty responses immediately. I'd be
+                    terrible at rap battles!
+                  </p>
+                  <p><strong>How I cope:</strong></p>
+                  <ul>
+                    <li>Improving my public speaking skills</li>
+                    <li>Preparing ahead when possible</li>
+                    <li>Taking time to think before responding</li>
+                  </ul>
+                </div>
+              </label>
+            </div>
+
+            <div class="flip-card stagger-3">
+              <input type="checkbox" id="card3" />
+              <label for="card3" class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-indicator">💪</div>
+                  <h3>Empathetic</h3>
+                  <p>I never let my ego stand in the way.</p>
+                </div>
+                <div class="flip-card-back">
+                  <div class="card-indicator">😱</div>
+                  <h3>Interrupting Others</h3>
+                  <p>
+                    I tend to interrupt others, though this has improved greatly
+                    over the last few years.
+                  </p>
+                  <p><strong>How I cope:</strong></p>
+                  <ul>
+                    <li>Practice active listening</li>
+                    <li>Focus on empathy and understanding</li>
+                    <li>Use willpower to keep getting better</li>
+                  </ul>
+                </div>
+              </label>
+            </div>
+
+            <div class="flip-card stagger-4">
+              <input type="checkbox" id="card4" />
+              <label for="card4" class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-indicator">💪</div>
+                  <h3>Calm & Understanding</h3>
+                  <p>
+                    I know it's not all rainbows – things break, people forget,
+                    we all make mistakes.
+                  </p>
+                </div>
+                <div class="flip-card-back">
+                  <div class="card-indicator">😱</div>
+                  <h3>Lack of Authority</h3>
+                  <p>
+                    I'm often too informal and easygoing to command respect.
+                  </p>
+                  <p><strong>How I cope:</strong></p>
+                  <ul>
+                    <li>Servant leadership is a thing, isn't it?</li>
+                    <li>Focus on supporting the team</li>
+                    <li>Lead by example rather than command</li>
+                  </ul>
+                </div>
+              </label>
+            </div>
+
+            <div class="flip-card stagger-5">
+              <input type="checkbox" id="card5" />
+              <label for="card5" class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-indicator">💪</div>
+                  <h3>Methodical & Focused</h3>
+                  <p>I'm minimalistic, organized, and systematic.</p>
+                </div>
+                <div class="flip-card-back">
+                  <div class="card-indicator">😱</div>
+                  <h3>Poor at Multitasking</h3>
+                  <p>
+                    I'm poor at multitasking and prefer focusing on one problem
+                    at a time.
+                  </p>
+                  <p><strong>How I cope:</strong></p>
+                  <ul>
+                    <li>Context switching is bad anyway!</li>
+                    <li>Organize work to minimize distractions</li>
+                    <li>Time-blocking for focused work sessions</li>
+                  </ul>
+                </div>
+              </label>
+            </div>
+
+            <div class="flip-card stagger-6">
+              <input type="checkbox" id="card6" />
+              <label for="card6" class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-indicator">💪</div>
+                  <h3>Curious Explorer</h3>
+                  <p>I explore diverse fields.</p>
+                </div>
+                <div class="flip-card-back">
+                  <div class="card-indicator">😱</div>
+                  <h3>Poor Memory</h3>
+                  <p>
+                    I have poor memory for important things but remember all
+                    unnecessary details with clarity. D'oh!
+                  </p>
+                  <p><strong>How I cope:</strong></p>
+                  <ul>
+                    <li>Write everything down</li>
+                    <li>Use systems to stay organized</li>
+                    <li>Rely on tools and documentation</li>
+                  </ul>
+                </div>
+              </label>
+            </div>
+          </div>
         </section>
 
         <section class="fade-in section-alt">
-            <h2>Pronounce <span class="czech">"Lukš"</span></h2>
-            <p class="intro-text">The 'u' is pronounced like 'oo' in book, and 'š' (s with a little hat) makes a 'sh' sound, so it's pronounced '<strong>look-sh</strong>'.</p>
+          <h2>Pronounce <span class="czech">"Lukš"</span></h2>
+          <p class="intro-text">
+            The 'u' is pronounced like 'oo' in book, and 'š' (s with a little
+            hat) makes a 'sh' sound, so it's pronounced
+            '<strong>look-sh</strong>'.
+          </p>
         </section>
 
         <section class="fade-in">
-            <h2>Interests ❤️</h2>
-            <p class="intro-text">I'm a simple guy:</p>
-            <div class="interests-grid">
-                <span class="interest-pill">👥 time with friends and family</span>
-                <span class="interest-pill">🍕 tasty food</span>
-                <span class="interest-pill">🌲 nature walks</span>
-                <span class="interest-pill">🚵‍♂️ healthy fitness</span>
-                <span class="interest-pill">😄 silly laughs</span>
-                <span class="interest-pill">📚 learning new things</span>
-                <span class="interest-pill">🎮 coop and VR games</span>
-                <span class="interest-pill">📖 design & sci-fi books</span>
-                <span class="interest-pill">🎬 engaging movies</span>
-                <span class="interest-pill">👨‍🍳 homemade cooking</span>
-                
-            </div>
+          <h2>Interests ❤️</h2>
+          <p class="intro-text">I'm a simple guy:</p>
+          <div class="interests-grid">
+            <span class="interest-pill">👥 time with friends and family</span>
+            <span class="interest-pill">🍕 tasty food</span>
+            <span class="interest-pill">🌲 nature walks</span>
+            <span class="interest-pill">🚵‍♂️ healthy fitness</span>
+            <span class="interest-pill">😄 silly laughs</span>
+            <span class="interest-pill">📚 learning new things</span>
+            <span class="interest-pill">🎮 coop and VR games</span>
+            <span class="interest-pill">📖 design & sci-fi books</span>
+            <span class="interest-pill">🎬 engaging movies</span>
+            <span class="interest-pill">👨‍🍳 homemade cooking</span>
+          </div>
         </section>
 
         <section class="fade-in section-alt" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Contact</h2>
-            <div class="contact-links">
-             Let's start with hello: <span class="contact-email">rluks@protonmail.com</span>
-            </div>
+          <h2 id="contact-heading">Contact</h2>
+          <div class="contact-links">
+            Let's start with hello:
+            <span class="contact-email">rluks@protonmail.com</span>
+          </div>
         </section>
-
-        </main>
+      </main>
     </div>
-    
+
     <script>
-        // Intersection Observer for scroll-triggered fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      // Intersection Observer for scroll-triggered fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with fade-in class (except spark items)
-        document.addEventListener('DOMContentLoaded', () => {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            // Trigger slide-in animations for spark items on page load
-            setTimeout(() => {
-                const slideElements = document.querySelectorAll('.slide-in');
-                slideElements.forEach(element => {
-                    element.classList.add('visible');
-                });
-            }, 100);
-            
-            // Observe flip cards for staggered animation
-            const flipCards = document.querySelectorAll('.flip-card');
-            flipCards.forEach(card => {
-                observer.observe(card);
-            });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
         });
+      }, observerOptions);
+
+      // Observe all elements with fade-in class (except spark items)
+      document.addEventListener("DOMContentLoaded", () => {
+        const fadeElements = document.querySelectorAll(".fade-in");
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Trigger slide-in animations for spark items on page load
+        setTimeout(() => {
+          const slideElements = document.querySelectorAll(".slide-in");
+          slideElements.forEach((element) => {
+            element.classList.add("visible");
+          });
+        }, 100);
+
+        // Observe flip cards for staggered animation
+        const flipCards = document.querySelectorAll(".flip-card");
+        flipCards.forEach((card) => {
+          observer.observe(card);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
