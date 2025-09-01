@@ -48,12 +48,12 @@ body {
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url('InterVariable.woff2') format('woff2');
+    src: url('fonts/InterVariable.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'CooperFiveOpti-Black';
-    src: url('CooperFiveOpti-Black.otf') format('opentype');
+    src: url('fonts/CooperFiveOpti-Black.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
