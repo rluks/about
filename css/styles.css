@@ -684,11 +684,6 @@ section:has(.work-style-grid)::after {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.work-style-column:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
 .work-style-column:focus-within {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
