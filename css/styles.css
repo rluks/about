@@ -67,12 +67,10 @@ body {
 :root {
   /* Colors */
   --color-primary: #e56b0c;
-  --color-primary-hover: #d45a00;
   --color-primary-light: rgba(229, 107, 12, 0.05);
   --color-complementary: #2563eb;
   --color-complementary-light: #e9eef8;
   --color-complementary-medium: rgba(37, 99, 235, 0.12);
-  --color-complementary-border: rgba(37, 99, 235, 0.15);
   --color-text-primary: #2d3748;
   --color-text-secondary: #4a5568;
   --color-text-muted: #5a6c7d;
@@ -106,14 +104,15 @@ body {
   --font-size-5xl: 2.25rem; /* 36px */
   --font-size-6xl: 3rem; /* 48px */
   --line-height-base: 1.7;
-  --line-height-tight: 1.4;
+
+  /* Hero-specific font sizes */
+  --font-size-hero-main: 3rem; /* 48px - main hero text */
+  --font-size-hero-subtitle: 2.25rem; /* 36px - hero subtitle */
+  --font-size-hero-main-mobile: 2rem; /* 32px - mobile main */
+  --font-size-hero-subtitle-mobile: 1.5rem; /* 24px - mobile subtitle */
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-text: 2px 2px 8px rgba(0, 0, 0, 0.8), 1px 1px 4px rgba(0, 0, 0, 0.6),
-    0 0 2px rgba(0, 0, 0, 0.9);
   --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.08);
@@ -128,7 +127,6 @@ body {
 
   /* Transitions */
   --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
   --transition-slow: 0.6s ease;
 }
 
@@ -226,7 +224,6 @@ h2::after {
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0.4) 60%,
       rgba(0, 0, 0, 0.7) 100%
     ),
@@ -237,50 +234,65 @@ h2::after {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  padding-left: var(--space-5xl);
-  padding-bottom: var(--space-4xl);
-  overflow: hidden;
+  padding: var(--space-2xl) var(--space-5xl) var(--space-3xl);
   border-bottom-left-radius: var(--radius-xl);
   border-bottom-right-radius: var(--radius-xl);
-  contain: layout style paint;
 }
 
 .hero-text {
   font-family: var(--font-family-heading);
   color: var(--color-primary);
-  font-size: var(--font-size-4xl);
-  font-weight: 500;
-  line-height: var(--line-height-tight);
+  font-size: var(--font-size-hero-main);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   text-align: left;
-  max-width: 500px;
+  max-width: 600px;
+  margin-bottom: var(--space-md);
 }
 
 .hero-text-white {
   color: var(--color-white);
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(30px);
 }
 
 .hero-p1 {
-  animation: slideUpFadeIn 1.2s ease-out 0.8s forwards;
+  animation: slideUpFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
 }
 
 .hero-p2 {
-  animation: slideUpFadeIn 1.2s ease-out 1s forwards;
+  animation: slideUpFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+
+.hero-p3 {
+  animation: slideUpFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.0s forwards;
 }
 
 .hero-text-orange {
-  color: var(--color-primary);
+  color: #ff7a1a;
   opacity: 0;
-  transform: translateY(50px);
-  animation: slideUpFadeIn 1.2s ease-out 0.4s forwards;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
 }
 
 .hero-text span {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-4xl);
-  text-shadow: var(--shadow-text);
-  letter-spacing: 0.06rem;
+  font-size: var(--font-size-hero-main);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  margin-top: -4px;
+}
+
+.hero-subtitle span {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-hero-subtitle);
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.02em;
 }
 
 /* ===== LAYOUT SECTIONS ===== */
@@ -781,7 +793,6 @@ section:has(.work-style-grid)::after {
   background-position: center;
 }
 
-
 /* ===== CONTACT SECTION ===== */
 .contact-links {
   display: flex;
@@ -802,7 +813,7 @@ section:has(.work-style-grid)::after {
 @keyframes slideUpFadeIn {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -888,17 +899,27 @@ section:has(.work-style-grid)::after {
     height: 300px;
     margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-md))
       var(--space-3xl) calc(-1 * var(--space-md));
-    padding: var(--space-md);
-    padding-bottom: var(--space-2xl);
+    padding: var(--space-md) var(--space-md) var(--space-2xl);
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    background-attachment: scroll;
+    background-position: center center;
   }
 
   .hero-text {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-hero-main-mobile);
+    line-height: 1.2;
     text-align: center;
-    margin-top: var(--space-md);
-    max-width: 90%;
+    max-width: 85%;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-text span {
+    font-size: var(--font-size-hero-main-mobile);
+  }
+
+  .hero-subtitle span {
+    font-size: var(--font-size-hero-subtitle-mobile);
   }
 
   h1 {
