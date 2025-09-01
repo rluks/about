@@ -381,6 +381,25 @@ section:last-of-type {
   flex-direction: column;
   gap: var(--space-md);
   margin-block-start: var(--space-xl);
+  position: relative;
+}
+
+/* Sparkle background decoration */
+.spark-grid::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 560px;
+  background-image: url('../images/sparkle.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .spark-item {
