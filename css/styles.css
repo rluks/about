@@ -3,6 +3,11 @@
 /* ===== INLINE STYLES MOVED FROM HTML ===== */
 /* Micro dot grid pattern */
 body {
+    font-family: var(--font-family-primary);
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
+    font-size: var(--font-size-base);
     background-image: radial-gradient(
         circle,
         rgba(229, 107, 12, 0.1) 2px,
@@ -145,13 +150,6 @@ a:focus-visible {
     text-decoration: underline;
 }
 
-body {
-    font-family: var(--font-family-primary);
-    line-height: var(--line-height-base);
-    color: var(--color-text-primary);
-    background: var(--color-bg-primary);
-    font-size: var(--font-size-base);
-}
 
 .container {
     max-width: 800px;
