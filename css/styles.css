@@ -660,9 +660,26 @@ section:has(.work-style-grid)::after {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
   box-shadow: var(--shadow-subtle);
+}
+
+.interest-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.interest-pill:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+a.interest-pill {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* ===== WORK STYLE SECTION ===== */
