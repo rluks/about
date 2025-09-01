@@ -504,7 +504,7 @@ section:last-of-type {
 .flip-card-inner {
   position: relative;
   inline-size: 100%;
-  block-size: 265px;
+  block-size: 300px;
   text-align: center;
   transition: transform var(--transition-slow);
   transform-style: preserve-3d;
@@ -838,6 +838,17 @@ section:last-of-type {
   .flip-cards-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+
+  .flip-card-inner {
+    block-size: auto;
+    min-height: 300px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    height: auto;
+    min-height: 300px;
   }
 
   .contact-links {
