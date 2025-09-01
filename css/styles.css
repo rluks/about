@@ -660,7 +660,7 @@ section:has(.work-style-grid)::after {
 
 /* Work style section wrapper with lamp decoration */
 section:has(.work-style-grid) {
-  /*position: relative;*/
+  position: relative;
 }
 
 /* Lamp background decoration */
