@@ -362,6 +362,24 @@ section:last-of-type {
   border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
+/* ===== BACKGROUND DECORATIONS ===== */
+/* Shared styles for background SVG decorations */
+.spark-grid::before,
+section:has(.work-style-grid)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 560px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* ===== SPARK SECTION (ACCORDION) ===== */
 .spark-heading {
   font-family: var(--font-family-heading);
@@ -386,20 +404,8 @@ section:last-of-type {
 
 /* Sparkle background decoration */
 .spark-grid::before {
-  content: "";
-  position: absolute;
-  left: -120px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 400px;
-  height: 560px;
-  background-image: url('../images/sparkle.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.2;
-  z-index: -1;
-  pointer-events: none;
+  left: -350px;
+  background-image: url("../images/sparkle.svg");
 }
 
 .spark-item {
@@ -650,6 +656,17 @@ section:last-of-type {
   gap: var(--space-2xl);
   margin-top: var(--space-2xl);
   margin-bottom: var(--space-lg);
+}
+
+/* Work style section wrapper with lamp decoration */
+section:has(.work-style-grid) {
+  position: relative;
+}
+
+/* Lamp background decoration */
+section:has(.work-style-grid)::after {
+  right: -375px;
+  background-image: url("../images/lamp.svg");
 }
 
 .work-style-desc {
