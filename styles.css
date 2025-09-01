@@ -695,7 +695,7 @@ section:last-of-type {
     
     .interest-pill {
         font-size: var(--font-size-xs);
-        padding: var(--space-sm) var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
     }
     
     /* Mobile adaptations for blue sections */
