@@ -820,8 +820,9 @@ section:has(.work-style-grid)::after {
 }
 
 .czechia-map {
-  width: 24rem;
+  width: auto;
   height: 13.875rem;
+  max-width: 100%;
   margin-bottom: var(--space-lg);
 }
 
@@ -913,7 +914,8 @@ section:has(.work-style-grid)::after {
 
   .hero {
     height: 300px;
-    margin: calc(-1 * var(--space-md)) calc(-50vw + 50%) var(--space-3xl) calc(-50vw + 50%); /* Match container padding with negative margin + full width */
+    margin: calc(-1 * var(--space-md)) calc(-50vw + 50%) var(--space-3xl)
+      calc(-50vw + 50%); /* Match container padding with negative margin + full width */
     padding: var(--space-md) var(--space-md) var(--space-2xl);
     justify-content: center;
     align-items: flex-end;
@@ -1031,5 +1033,11 @@ section:has(.work-style-grid)::after {
   .spark-grid::before,
   section:has(.work-style-grid)::after {
     display: none;
+  }
+
+  /* Czechia map mobile adjustments */
+  .czechia-map {
+    height: 10rem;
+    max-width: 90%;
   }
 }
