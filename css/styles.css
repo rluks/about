@@ -61,6 +61,7 @@ body {
   src: url("../fonts/CooperFiveOpti-Black.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* ===== CSS CUSTOM PROPERTIES ===== */
