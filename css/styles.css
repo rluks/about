@@ -110,7 +110,7 @@ body {
   --font-size-hero-main: 3rem; /* 48px - main hero text */
   --font-size-hero-subtitle: 1.915rem;
   --font-size-hero-main-mobile: 2rem; /* 32px - mobile main */
-  --font-size-hero-subtitle-mobile: 1.5rem; /* 24px - mobile subtitle */
+  --font-size-hero-subtitle-mobile: 1.277rem; /* Maintains same ratio as desktop (2rem ÷ 1.57) */
 
   /* Shadows */
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -934,8 +934,13 @@ section:has(.work-style-grid)::after {
     font-size: var(--font-size-hero-main-mobile);
   }
 
+  .hero-subtitle {
+    margin-top: -0.667rem; /* Maintains same proportional spacing as desktop (-1rem ÷ 1.5 scale factor) */
+  }
+
   .hero-subtitle span {
     font-size: var(--font-size-hero-subtitle-mobile);
+    white-space: nowrap; /* Prevent line breaks */
   }
 
   h1 {
