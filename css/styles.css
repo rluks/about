@@ -107,7 +107,7 @@ body {
 
   /* Hero-specific font sizes */
   --font-size-hero-main: 3rem; /* 48px - main hero text */
-  --font-size-hero-subtitle: 2.25rem; /* 36px - hero subtitle */
+  --font-size-hero-subtitle: 1.915rem;
   --font-size-hero-main-mobile: 2rem; /* 32px - mobile main */
   --font-size-hero-subtitle-mobile: 1.5rem; /* 24px - mobile subtitle */
 
@@ -267,7 +267,7 @@ h2::after {
 }
 
 .hero-p3 {
-  animation: slideUpFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.0s forwards;
+  animation: slideUpFadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
 }
 
 .hero-text-orange {
@@ -285,7 +285,7 @@ h2::after {
 }
 
 .hero-subtitle {
-  margin-top: -4px;
+  margin-top: -1rem;
 }
 
 .hero-subtitle span {
