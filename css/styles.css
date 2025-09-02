@@ -110,7 +110,7 @@ body {
   --font-size-hero-main: 3rem; /* 48px - main hero text */
   --font-size-hero-subtitle: 1.915rem;
   --font-size-hero-main-mobile: 2rem; /* 32px - mobile main */
-  --font-size-hero-subtitle-mobile: 1.277rem; /* Maintains same ratio as desktop (2rem ÷ 1.57) */
+  --font-size-hero-subtitle-mobile: 1.2rem;
 
   /* Shadows */
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
