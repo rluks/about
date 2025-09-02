@@ -810,6 +810,20 @@ section:has(.work-style-grid)::after {
   font-size: var(--font-size-lg);
 }
 
+/* ===== CONTACT MAP STYLES ===== */
+.contact-map {
+  margin-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.czechia-map {
+  width: 60%;
+  height: auto;
+  max-width: 384px;
+  margin-bottom: var(--space-lg);
+}
+
 /* ===== HERO ANIMATIONS ===== */
 @keyframes slideUpFadeIn {
   from {
