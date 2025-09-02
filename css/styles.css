@@ -819,9 +819,8 @@ section:has(.work-style-grid)::after {
 }
 
 .czechia-map {
-  width: 60%;
+  width: 24rem;
   height: 13.875rem;
-  max-width: 24rem;
   margin-bottom: var(--space-lg);
 }
 
