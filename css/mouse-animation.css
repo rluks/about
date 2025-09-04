@@ -106,9 +106,36 @@
   transform-origin: 21px 12px;
 }
 
-/* Head tilts slightly when listening */
+/* Head tilts slightly when listening, then supports sniffing */
 .mouse-animated.clicked #head {
-  animation: alertHead 0.8s ease-in-out;
+  animation: alertHead 0.8s ease-in-out, sniffHead 1.2s ease-in-out 0.6s;
+}
+
+/* Sniffing animation - nose lifts twice */
+.mouse-animated.clicked #nose {
+  animation: sniffNose 1.2s ease-in-out 0.6s;
+  transform-origin: 4px 18px;
+}
+
+/* Whiskers follow nose movement with cascading delay */
+.mouse-animated.clicked #whisker-A {
+  animation: sniffWhiskers 1.2s ease-in-out 0.65s;
+  transform-origin: 2.72px 19.2px;
+}
+
+.mouse-animated.clicked #whisker-B {
+  animation: sniffWhiskers 1.2s ease-in-out 0.7s;
+  transform-origin: 3.82px 19.43px;
+}
+
+.mouse-animated.clicked #whisker-C {
+  animation: sniffWhiskers 1.2s ease-in-out 0.75s;
+  transform-origin: 4.99px 19.43px;
+}
+
+/* Subtle belly breathing during sniffing */
+.mouse-animated.clicked #belly {
+  animation: sniffBreathe 1.2s ease-in-out 0.6s;
 }
 
 @keyframes earFlick {
@@ -137,4 +164,41 @@
   0%, 100% { transform: rotate(0deg); }
   25%, 75% { transform: rotate(-1deg); }
   50% { transform: rotate(1deg); }
+}
+
+/* Sniffing keyframes - two short alert sniffs */
+@keyframes sniffNose {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-12deg); }        /* First sniff up */
+  25% { transform: rotate(0deg); }          /* Quick down */
+  40% { transform: rotate(-12deg); }        /* Second sniff up */
+  50% { transform: rotate(0deg); }          /* Quick down */
+  60%, 100% { transform: rotate(0deg); }    /* Rest */
+}
+
+@keyframes sniffWhiskers {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-8deg); }         /* Move exactly with nose */
+  25% { transform: rotate(0deg); }
+  40% { transform: rotate(-8deg); }
+  50% { transform: rotate(0deg); }
+  60%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes sniffHead {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-3deg); }         /* Support nose lift */
+  25% { transform: rotate(0deg); }
+  40% { transform: rotate(-3deg); }
+  50% { transform: rotate(0deg); }
+  60%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes sniffBreathe {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(0.98); }           /* Subtle inhale */
+  25% { transform: scale(1.01); }           /* Exhale */
+  40% { transform: scale(0.98); }           /* Second inhale */
+  50% { transform: scale(1.01); }           /* Exhale */
+  60%, 100% { transform: scale(1); }        /* Normal */
 }

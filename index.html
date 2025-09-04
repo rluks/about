@@ -713,10 +713,10 @@
             // Add clicked class to trigger ear perk animation
             mouse.classList.add("clicked");
             
-            // Remove class after animation completes (0.8s)
+            // Remove class after full sequence completes (ear flick 0.8s + sniffing 1.2s = 1.8s total)
             setTimeout(() => {
               mouse.classList.remove("clicked");
-            }, 800);
+            }, 1800);
           });
           
           // Add cursor pointer to indicate it's clickable
