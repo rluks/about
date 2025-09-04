@@ -86,3 +86,55 @@
   25% { transform: rotate(2deg); }
   75% { transform: rotate(-2deg); }
 }
+
+/* ===== CLICK INTERACTION: EAR PERK ALERT ===== */
+
+/* Clicked state - pauses normal animations briefly */
+.mouse-animated.clicked {
+  animation-play-state: paused;
+}
+
+/* Inner ear flicks back and forth rapidly */
+.mouse-animated.clicked #inner-ear {
+  animation: earFlick 0.8s ease-in-out;
+  transform-origin: 22px 12px;
+}
+
+/* Outer ear also flicks for realistic effect */
+.mouse-animated.clicked #outer-ear {
+  animation: outerEarFlick 0.8s ease-in-out;
+  transform-origin: 21px 12px;
+}
+
+/* Head tilts slightly when listening */
+.mouse-animated.clicked #head {
+  animation: alertHead 0.8s ease-in-out;
+}
+
+@keyframes earFlick {
+  0%, 100% { transform: rotate(0deg); }
+  12% { transform: rotate(-15deg); }
+  25% { transform: rotate(10deg); }
+  37% { transform: rotate(-12deg); }
+  50% { transform: rotate(8deg); }
+  62% { transform: rotate(-8deg); }
+  75% { transform: rotate(5deg); }
+  87% { transform: rotate(-3deg); }
+}
+
+@keyframes outerEarFlick {
+  0%, 100% { transform: rotate(0deg); }
+  12% { transform: rotate(-8deg); }
+  25% { transform: rotate(5deg); }
+  37% { transform: rotate(-6deg); }
+  50% { transform: rotate(4deg); }
+  62% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+  87% { transform: rotate(-1deg); }
+}
+
+@keyframes alertHead {
+  0%, 100% { transform: rotate(0deg); }
+  25%, 75% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
