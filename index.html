@@ -709,13 +709,24 @@
         // Mouse ear perk alert click interaction
         const mouse = document.querySelector(".mouse-animated");
         if (mouse) {
+          let isAnimating = false;
+          
           mouse.addEventListener("click", () => {
-            // Add clicked class to trigger ear perk animation
+            // Prevent clicks while animation is playing
+            if (isAnimating) return;
+            
+            // Set animation state
+            isAnimating = true;
+            mouse.style.cursor = "default";
+            
+            // Add clicked class to trigger animation sequence
             mouse.classList.add("clicked");
             
-            // Remove class after full sequence completes (ear flick 0.8s + sniffing 1.2s = 1.8s total)
+            // Remove class and reset state after full sequence completes
             setTimeout(() => {
               mouse.classList.remove("clicked");
+              isAnimating = false;
+              mouse.style.cursor = "pointer";
             }, 1800);
           });
           
