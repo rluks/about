@@ -1,19 +1,61 @@
 /* ===== RESPONSIVE DESIGN ===== */
+
+/* Large tablets (769px-1024px) - 3-column grid */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "large large medium"
+      "small large2 large2";
+    gap: var(--space-lg);
+  }
+  
+  .bento-box-large:first-of-type {
+    grid-area: large;
+  }
+  
+  .bento-box-medium {
+    grid-area: medium;
+  }
+  
+  .bento-box-small {
+    grid-area: small;
+  }
+  
+  .bento-box-large:nth-of-type(3) {
+    grid-area: large2;
+  }
+
+  /* Adjust padding for medium screens */
+  .bento-box-large {
+    padding: var(--space-2xl);
+  }
+  
+  .bento-box-medium {
+    padding: var(--space-xl);
+  }
+  
+  .bento-box-small {
+    padding: var(--space-lg);
+  }
+}
+
+/* Mobile and tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .container {
-    padding: var(--space-md); /* Restore normal padding */
+    padding: var(--space-md);
   }
 
   .hero {
     height: 300px;
     margin: calc(-1 * var(--space-md)) calc(-50vw + 50%) var(--space-3xl)
-      calc(-50vw + 50%); /* Match container padding with negative margin + full width */
+      calc(-50vw + 50%);
     padding: var(--space-md) var(--space-md) var(--space-2xl);
     justify-content: center;
     align-items: flex-end;
     background-attachment: scroll;
     background-position: center center;
-    border-radius: 0; /* Remove rounded corners on mobile */
+    border-radius: 0;
   }
 
   .hero-text {
@@ -29,12 +71,11 @@
   }
 
   .hero-subtitle {
-    margin-top: -0.667rem; /* Maintains same proportional spacing as desktop (-1rem ÷ 1.5 scale factor) */
+    margin-top: -0.667rem;
   }
 
   .hero-subtitle span {
     font-size: var(--font-size-hero-subtitle-mobile);
-    /*white-space: nowrap;*/ /* Prevent line breaks */
   }
 
   h1 {
@@ -42,7 +83,7 @@
   }
 
   h2 {
-    font-size: 30px; /* Custom mobile size */
+    font-size: 30px;
   }
 
   .flip-cards-grid {
@@ -61,7 +102,6 @@
     min-height: 300px;
   }
 
-  /* Work style grid mobile adaptations */
   .work-style-grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
@@ -98,7 +138,6 @@
     padding: var(--space-sm) var(--space-md);
   }
 
-  /* Mobile adaptations for blue sections */
   .section-alt {
     margin-left: calc(-1 * var(--space-md));
     margin-right: calc(-1 * var(--space-md));
@@ -110,7 +149,7 @@
   }
 
   .section-alt:hover {
-    transform: none; /* Disable hover lift on mobile */
+    transform: none;
   }
 
   .section-alt .contact-email {
@@ -121,15 +160,122 @@
     margin-top: var(--space-sm);
   }
 
-  /* Hide background decorations on mobile */
   .spark-grid::before,
   section:has(.work-style-grid)::after {
     display: none;
   }
 
-  /* Czechia map mobile adjustments */
+  /* Bento box mobile - single column with preserved visual hierarchy */
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "large"
+      "large2"
+      "medium"
+      "small";
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  /* Reset grid positioning for mobile while maintaining grid areas */
+  .bento-box-small,
+  .bento-box-medium,
+  .bento-box-large {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .bento-box-large:first-of-type {
+    grid-area: large;
+  }
+  
+  .bento-box-medium {
+    grid-area: medium;
+  }
+  
+  .bento-box-large:nth-of-type(3) {
+    grid-area: large2;
+  }
+  
+  .bento-box-small {
+    grid-area: small;
+  }
+
+  /* Preserve sophisticated styling on mobile with mobile-optimized padding */
+  .bento-box-large {
+    padding: var(--space-2xl);
+  }
+
+  .bento-box-medium {
+    padding: var(--space-xl);
+  }
+
+  .bento-box-small {
+    padding: var(--space-lg);
+  }
+
+  /* Mobile typography optimization */
+  .bento-box p {
+    font-size: var(--font-size-base);
+    line-height: 1.65;
+  }
+
+  /* Reduce hover effects for mobile */
+  .bento-box-large:hover {
+    transform: translateY(-2px);
+  }
+
+  .bento-box-medium:hover,
+  .bento-box-small:hover {
+    transform: translateY(-1px);
+  }
+
   .czechia-map {
     height: 10rem;
     max-width: 90%;
+  }
+}
+
+/* Small mobile screens (320px-480px) */
+@media (max-width: 480px) {
+  .bento-grid {
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+  
+  /* Compact padding for small screens while maintaining hierarchy */
+  .bento-box-large {
+    padding: var(--space-xl);
+  }
+
+  .bento-box-medium {
+    padding: var(--space-lg);
+  }
+
+  .bento-box-small {
+    padding: var(--space-md);
+  }
+  
+  /* Optimize typography for small screens */
+  .bento-box p {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .bento-box {
+    min-height: 44px; /* Accessibility - minimum touch target */
+  }
+  
+  /* Subtle touch feedback instead of hover effects */
+  .bento-box:hover {
+    transform: none;
+  }
+  
+  .bento-box:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 }
